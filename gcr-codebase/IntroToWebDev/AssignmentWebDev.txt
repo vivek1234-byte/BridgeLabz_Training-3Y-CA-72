@@ -1,0 +1,166 @@
+ASSIGNMENT 1 - WEB DEVELOPMENT FUNDAMENTALS
+=============================================
+
+
+1. FRONTEND vs BACKEND vs FULL-STACK DEVELOPMENT
+--------------------------------------------------
+
+Frontend:
+- What it does: Everything the user sees and interacts with on screen - the entire UI/UX layer. Runs in the browser.
+- Technologies: HTML, CSS, JavaScript, React, Vue
+- Example: Scrolling through Instagram's feed or clicking a like button - this is all frontend
+
+Backend:
+- What it does: Server-side logic - processing data, communicating with the database, applying business rules. Not visible to the user.
+- Technologies: Node.js, Django, Java Spring, PHP
+- Example: When you log into Instagram, verifying your password is handled by the backend
+
+Full-Stack:
+- What it does: Handles both frontend and backend - building the entire application end-to-end
+- Technologies: MERN, MEAN, Django + React, etc.
+- Example: A developer who builds the UI of an e-commerce site like Amazon as well as its payment processing backend is a full-stack developer
+
+Combined real-world example:
+When you open the Swiggy app, the frontend displays the restaurant cards. When you place an order, the backend processes the order, saves it to the database, and notifies the restaurant.
+
+
+2. HOW THE CLIENT-SERVER MODEL WORKS IN WEB ARCHITECTURE
+--------------------------------------------------
+
+The client-server model is an architecture with two main parties:
+
+- Client: The browser or mobile app that sends the request (e.g., "I need the home page")
+- Server: A computer/software that listens for requests, processes them, and sends back a response
+- Database: Connected to the server, where the actual data is stored
+
+Step-by-step process:
+1. The client sends an HTTP request to the server from the browser (e.g., GET /home)
+2. The server receives and processes the request
+3. If needed, the server queries the database for data
+4. The database returns the requested data to the server
+5. The server sends an HTTP response back to the client (as HTML, CSS, JS, or JSON data)
+6. The client (browser) receives the response and renders it for the user
+
+This model is important because it allows multiple clients to connect to a single server, while data stays securely stored in one central location (the database).
+
+
+3. HOW A BROWSER REQUESTS AND DISPLAYS A WEB PAGE
+--------------------------------------------------
+
+1. URL Parsing - The browser parses the URL (protocol, domain, path).
+2. DNS Lookup - The domain name (e.g., google.com) is converted into an IP address via a DNS server.
+3. TCP Connection - The browser establishes a TCP connection with the server (and a TLS handshake for HTTPS).
+4. HTTP Request - The browser sends an HTTP GET request to the server.
+5. Server Processing - The server handles the request, queries the database if needed, and builds a response.
+6. HTTP Response - The server sends back HTML, CSS, JS files (or JSON data) along with a status code (e.g., 200 OK).
+7. Rendering - The browser's rendering engine parses the HTML to build the DOM, applies CSS (CSSOM), and executes JavaScript.
+8. Display - The final page is displayed to the user.
+
+
+4. TOOLS REQUIRED FOR WEB DEVELOPMENT ENVIRONMENT
+--------------------------------------------------
+
+- Code Editor (VS Code): For writing, editing, and debugging code
+- Web Browser (Chrome/Firefox): For testing websites and debugging with DevTools
+- Version Control (Git): For tracking code history and enabling collaboration
+- Node.js & npm: JavaScript runtime and package manager - for installing dependencies
+- Terminal / Command Line: For running commands and starting servers
+- Browser DevTools: For inspecting HTML/CSS/JS, viewing network requests, and debugging console errors
+- Package Manager (npm/yarn): For installing and managing libraries and frameworks
+- Database Tool (MySQL Workbench/MongoDB Compass): For visually managing databases
+- API Testing Tool (Postman): For testing backend APIs
+
+
+5. WHAT IS A WEB SERVER? EXAMPLES
+--------------------------------------------------
+
+Definition: A web server is software (or the hardware it runs on) that handles HTTP requests from a client (browser) and responds with web pages, images, or data.
+
+Commonly used web servers:
+1. Apache HTTP Server - The oldest and most widely used open-source server
+2. Nginx - Known for high performance, reverse proxying, and load balancing
+3. Microsoft IIS (Internet Information Services) - Used for Windows-based applications
+4. Node.js (Express server) - Used for JavaScript-based backend applications
+5. LiteSpeed - Similar to Apache but faster, especially popular for WordPress sites
+
+
+6. ROLES: FRONTEND DEVELOPER, BACKEND DEVELOPER, DATABASE ADMINISTRATOR
+--------------------------------------------------
+
+Frontend Developer:
+- Implements UI designs, builds responsive layouts, handles user interactions, fetches data from APIs and displays it
+
+Backend Developer:
+- Writes server-side logic, builds APIs, handles authentication/authorization, implements business logic, integrates with the database
+
+Database Administrator (DBA):
+- Designs the database, keeps data secure and optimized, takes backups, tunes query performance, ensures data integrity
+
+
+7. INSTALLING & CONFIGURING VS CODE FOR HTML/CSS/JS
+--------------------------------------------------
+
+Steps:
+1. Download and install VS Code from code.visualstudio.com.
+2. Install the following extensions:
+   - Live Server - to preview HTML files in real time in the browser
+   - Prettier - for code formatting
+   - HTML CSS Support
+   - JavaScript (ES6) code snippets
+3. Create a project folder and open it in VS Code.
+4. Create index.html, style.css, and script.js files.
+5. Right-click the HTML file and select "Open with Live Server" to run it.
+
+NOTE: You'll need to take the screenshot yourself on your own system after following these steps - attach it separately to the assignment.
+
+
+8. STATIC vs DYNAMIC WEBSITES
+--------------------------------------------------
+
+Static Website:
+- Content: Fixed - the same content is shown to everyone
+- Technology: Just HTML, CSS, and a bit of JS
+- Update process: Every change requires manually editing the code
+- Example: A simple portfolio website that just contains resume information
+
+Dynamic Website:
+- Content: Generated from a database, can change based on the user
+- Technology: HTML, CSS, JS + a backend language (PHP, Node.js) + Database
+- Update process: Can be updated through a Content Management System (CMS) or admin panel
+- Example: Amazon.com - where every user sees different recommendations, cart contents, and login-based content
+
+
+9. FIVE WEB BROWSERS & THEIR RENDERING ENGINES
+--------------------------------------------------
+
+1. Google Chrome - Engine: Blink - Fastest to adopt new web standards, largest market share
+2. Mozilla Firefox - Engine: Gecko - Open-source, privacy-focused
+3. Safari - Engine: WebKit - Default on Apple devices (Mac/iPhone)
+4. Microsoft Edge - Engine: Blink (Chromium-based since 2020) - Previously used its own EdgeHTML engine
+5. Opera - Engine: Blink - Chromium-based, with extra features like a built-in VPN
+
+How rendering engines differ:
+- Blink (Chrome, Edge, Opera) - Based on the Chromium project, fast and widely compatible, usually the first to support new CSS/JS features.
+- Gecko (Firefox) - An independent engine, known for strong standards compliance and privacy features.
+- WebKit (Safari) - Lightweight and battery-efficient, optimized for the Apple ecosystem, sometimes slightly slower to adopt the latest web features.
+
+As a result, the same website can render slightly differently across browsers - especially with CSS animations, font rendering, or support for newer JavaScript APIs.
+
+
+10. BASIC WEB ARCHITECTURE FLOW - CLIENT, SERVER, DATABASE, APIs
+--------------------------------------------------
+
+The basic web architecture has 4 main components: Client, Server, Database, and APIs.
+
+- Client: The browser or mobile app from which the user initiates a request
+- Server: The backend that processes requests and runs business logic
+- Database: Where the actual data (users, products, orders, etc.) is stored
+- APIs: Internal or third-party services the server uses for data or functionality (e.g., payment gateway, weather API)
+
+Flow explanation:
+1. The client sends a request from the browser (e.g., "show me my profile").
+2. The server receives and processes the request.
+3. If needed, the server queries the Database for data (fetching the user's data).
+4. If needed, the server calls external APIs (e.g., payment gateway, weather API).
+5. The server combines all the data and sends a response back to the client.
+6. The client renders the response and displays it to the user.
