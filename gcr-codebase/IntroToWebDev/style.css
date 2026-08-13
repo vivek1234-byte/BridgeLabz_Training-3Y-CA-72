@@ -1,0 +1,37 @@
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header-Container {
+            background-color: #bd5d25;
+            height: 80px;
+            gap: 100px;
+            justify-content: center;
+            text-align: center;
+
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #4d3030;
+            padding: 10px;
+            text-align: center;
+        }
+        .card-image {
+
+            background-color: red;
+            width: 40%;
+            height: 20px;
+            border-radius: 20%;
+        }
