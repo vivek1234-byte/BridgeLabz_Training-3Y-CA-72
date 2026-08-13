@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User List Dashboard</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="logo-area">
+            <div class="logo">Instagram</div>
+            <div class="om-logo">Om</div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <div class="menu-container">
+
+            <div class="menu-title">Dashboard</div>
+
+            <ul class="menu">
+
+                <li>
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-code-branch"></i>
+                    <span>Dashboard</span>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-list"></i>
+                    <span>Dashboard</span>
+                </li>
+
+                <li class="active">
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>Dashboard</span>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-plane"></i>
+                    <span>Dashboard</span>
+                </li>
+
+                <li class="dropdown">
+                    <div class="menu-row">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>Dashboard</span>
+                        <i class="fa-solid fa-chevron-up arrow"></i>
+                    </div>
+
+                    <ul class="submenu">
+                        <li>Dashboard</li>
+                        <li>Dashboard</li>
+                        <li>Dashboard</li>
+                        <li>Dashboard</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-lock"></i>
+                    <span>Dashboard</span>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <span>Dashboard</span>
+                    <i class="fa-solid fa-chevron-right right-arrow"></i>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-code-fork"></i>
+                    <span>Dashboard</span>
+                    <i class="fa-solid fa-chevron-right right-arrow"></i>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-crosshairs"></i>
+                    <span>Dashboard</span>
+                </li>
+
+            </ul>
+
+        </div>
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content">
+
+        <!-- Top Header -->
+        <header class="topbar">
+
+            <h2>User List</h2>
+
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+
+            <div class="profile">
+                <img src="https://i.pravatar.cc/100?img=12" alt="Profile">
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+        <section class="content">
+
+            <!-- Top Controls -->
+            <div class="content-top">
+
+                <div class="filter">
+                    <span>All (56)</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
+                <button class="add-btn">
+                    ADD NEW
+                    <span>+</span>
+                </button>
+
+                <div class="tools">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-gear"></i>
+                    <i class="fa-solid fa-filter"></i>
+                </div>
+
+            </div>
+
+
+            <!-- ================= TABLE ================= -->
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th class="check">
+                                <input type="checkbox">
+                            </th>
+
+                            <th>Image</th>
+
+                            <th>Title</th>
+
+                            <th>
+                                <span>Date</span>
+                                <i class="fa-solid fa-sort sort-icon"></i>
+                            </th>
+
+                            <th>
+                                <span>Title</span>
+                                <i class="fa-solid fa-sort-up sort-green"></i>
+                            </th>
+
+                            <th>Amount</th>
+
+                            <th>Status</th>
+
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>
+                                <img class="avatar" src="https://i.pravatar.cc/100?img=11">
+                            </td>
+                            <td class="placeholder">Enter Title...</td>
+                            <td>September 9, 2013</td>
+                            <td>704.555.0127</td>
+                            <td>$11.70</td>
+                            <td><span class="status">Danger</span></td>
+                            <td class="action">•••</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img class="avatar" src="https://i.pravatar.cc/100?img=12"></td>
+                            <td>Arlene McCoy</td>
+                            <td>August 2, 2013</td>
+                            <td>205.555.0100</td>
+                            <td>$5.22</td>
+                            <td><span class="status">Danger</span></td>
+                            <td class="action">•••</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img class="avatar" src="https://i.pravatar.cc/100?img=13"></td>
+                            <td>Cody Fisher</td>
+                            <td>September 24, 2017</td>
+                            <td>303.555.0105</td>
+                            <td>$11.70</td>
+                            <td><span class="status">Danger</span></td>
+                            <td class="action">•••</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img class="avatar" src="https://i.pravatar.cc/100?img=14"></td>
+                            <td>Esther Howard</td>
+                            <td>December 29, 2012</td>
+                            <td>229.555.0109</td>
+                            <td>$11.70</td>
+                            <td><span class="status">Danger</span></td>
+                            <td class="action">•••</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img class="avatar" src="https://i.pravatar.cc/100?img=15"></td>
+                            <td>Ronald Richards</td>
+                            <td>May 20, 2015</td>
+                            <td>201.555.0124</td>
+                            <td>$17.84</td>
+                            <td><span class="status">Danger</span></td>
+                            <td class="action">•••</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img class="avatar" src="https://i.pravatar.cc/100?img=16"></td>
+                            <td>Albert Flores</td>
+                            <td>May 31, 2015</td>
+                            <td>702.555.0122</td>
+                            <td>$5.22</td>
+                            <td><span class="status">Danger</span></td>
+                            <td class="action">•••</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img class="avatar" src="https://i.pravatar.cc/100?img=17"></td>
+                            <td>Marvin McKinney</td>
+                            <td>February 29, 2012</td>
+                            <td>671.555.0110</td>
+                            <td>$11.70</td>
+                            <td><span class="status">Danger</span></td>
+                            <td class="action">•••</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img class="avatar" src="https://i.pravatar.cc/100?img=18"></td>
+                            <td>Floyd Miles</td>
+                            <td>October 24, 2018</td>
+                            <td>807.555.0101</td>
+                            <td>$5.22</td>
+                            <td><span class="status">Danger</span></td>
+                            <td class="action">•••</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img class="avatar" src="https://i.pravatar.cc/100?img=19"></td>
+                            <td>Courtney Henry</td>
+                            <td>November 7, 2017</td>
+                            <td>480.555.0103</td>
+                            <td>$14.81</td>
+                            <td><span class="status">Danger</span></td>
+                            <td class="action">•••</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img class="avatar" src="https://i.pravatar.cc/100?img=20"></td>
+                            <td>Guy Hawkins</td>
+                            <td>May 29, 2017</td>
+                            <td>302.555.0107</td>
+                            <td>$11.70</td>
+                            <td><span class="status">Danger</span></td>
+                            <td class="action">•••</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img class="avatar" src="https://i.pravatar.cc/100?img=21"></td>
+                            <td>Ralph Edwards</td>
+                            <td>July 14, 2015</td>
+                            <td>629.555.0129</td>
+                            <td>$11.70</td>
+                            <td><span class="status">Danger</span></td>
+                            <td class="action">•••</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img class="avatar" src="https://i.pravatar.cc/100?img=22"></td>
+                            <td>Devon Lane</td>
+                            <td>December 19, 2013</td>
+                            <td>406.555.0120</td>
+                            <td>$6.48</td>
+                            <td><span class="status">Danger</span></td>
+                            <td class="action">•••</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img class="avatar" src="https://i.pravatar.cc/100?img=23"></td>
+                            <td>Jenny Wilson</td>
+                            <td>December 2, 2018</td>
+                            <td>239.555.0108</td>
+                            <td>$14.81</td>
+                            <td><span class="status">Danger</span></td>
+                            <td class="action">•••</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img class="avatar" src="https://i.pravatar.cc/100?img=24"></td>
+                            <td>Bessie Cooper</td>
+                            <td>March 6, 2018</td>
+                            <td>203.555.0106</td>
+                            <td>$8.99</td>
+                            <td><span class="status">Danger</span></td>
+                            <td class="action">•••</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img class="avatar" src="https://i.pravatar.cc/100?img=25"></td>
+                            <td>Cameron Williamson</td>
+                            <td>October 30, 2017</td>
+                            <td>308.555.0121</td>
+                            <td>$14.81</td>
+                            <td><span class="status">Danger</span></td>
+                            <td class="action">•••</td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td><img class="avatar" src="https://i.pravatar.cc/100?img=26"></td>
+                            <td>Darlene Robertson</td>
+                            <td>February 9, 2015</td>
+                            <td>225.555.0118</td>
+                            <td>$6.48</td>
+                            <td><span class="status">Danger</span></td>
+                            <td class="action">•••</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- ================= BOTTOM ================= -->
+            <div class="table-footer">
+
+                <div class="entries">
+                    Showing 1 to 10 of 50 entries
+                </div>
+
+                <div class="pagination">
+
+                    <span class="display">
+                        Display
+                        <select>
+                            <option>10</option>
+                            <option>20</option>
+                            <option>30</option>
+                        </select>
+                    </span>
+
+                    <button class="page-arrow">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <button>1</button>
+                    <button class="selected">2</button>
+                    <button>3</button>
+                    <button>4</button>
+
+                    <button class="page-arrow">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
