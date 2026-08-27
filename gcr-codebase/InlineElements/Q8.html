@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Report Card</title>
+</head>
+<body>
+
+    <!-- School name -->
+    <h1>Sunrise Public School, Mathura</h1>
+    <h2>Annual Report Card 2025-26</h2>
+
+    <p><strong>Student Name:</strong> Aman Verma &nbsp; | &nbsp; <strong>Class:</strong> X-B &nbsp; | &nbsp; <strong>Roll No:</strong> 24</p>
+
+    <!-- Marks table for 5 subjects -->
+    <!-- title attribute is used on headers/cells to improve clarity on hover -->
+    <table border="1" cellpadding="8" cellspacing="0">
+        <caption title="Marks obtained in the annual examination"><strong>Annual Examination Marks</strong></caption>
+
+        <thead>
+            <tr>
+                <th title="Serial number">S.No.</th>
+                <th title="Name of the subject">Subject</th>
+                <th title="Maximum marks for the subject">Maximum Marks</th>
+                <th title="Marks obtained by the student">Marks Obtained</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>English</td>
+                <td>100</td>
+                <td title="Marks in English">85</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Hindi</td>
+                <td>100</td>
+                <td title="Marks in Hindi">78</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Mathematics</td>
+                <td>100</td>
+                <td title="Marks in Mathematics">92</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Science</td>
+                <td>100</td>
+                <td title="Marks in Science">88</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Social Science</td>
+                <td>100</td>
+                <td title="Marks in Social Science">81</td>
+            </tr>
+
+            <!-- Total row: colspan merges the first two columns -->
+            <tr>
+                <th colspan="2" title="Sum of marks in all subjects">Total</th>
+                <td>500</td>
+                <td>424</td>
+            </tr>
+
+            <!-- Percentage row: rowspan not needed here, but colspan stretches the label -->
+            <tr>
+                <th colspan="3" title="Overall percentage secured">Percentage</th>
+                <td>84.8%</td>
+            </tr>
+
+            <!-- rowspan example: Result and Remarks share one merged label cell -->
+            <tr>
+                <th rowspan="2" title="Final outcome of the examination">Final Outcome</th>
+                <td colspan="2">Result</td>
+                <td>PASS</td>
+            </tr>
+            <tr>
+                <td colspan="2">Remarks</td>
+                <td>Excellent</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p><small>This is a computer generated report card and does not require a signature.</small></p>
+
+</body>
+</html>

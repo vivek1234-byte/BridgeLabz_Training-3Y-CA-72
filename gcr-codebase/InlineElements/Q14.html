@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Database</title>
+</head>
+<body>
+
+    <h1>My Movie Database</h1>
+
+    <!-- Movie table with border, title and colspan attributes -->
+    <table border="1" cellpadding="8" cellspacing="0" title="A collection of popular movies with ratings">
+
+        <!-- Caption at the top of the table -->
+        <caption><strong>Top Rated Movies Collection</strong></caption>
+
+        <thead>
+            <tr>
+                <th title="Name of the movie">Movie Name</th>
+                <th title="Category of the movie">Genre</th>
+                <th title="Year of release">Year</th>
+                <th title="Rating out of 10 on IMDB">IMDB Rating</th>
+                <th title="Link to the IMDB page">Link</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>3 Idiots</td>
+                <td>Comedy / Drama</td>
+                <td>2009</td>
+                <td>8.4</td>
+                <td><a href="https://www.imdb.com/title/tt1187043/" title="View 3 Idiots on IMDB">View on IMDB</a></td>
+            </tr>
+            <tr>
+                <td>Inception</td>
+                <td>Sci-Fi / Thriller</td>
+                <td>2010</td>
+                <td>8.8</td>
+                <td><a href="https://www.imdb.com/title/tt1375666/" title="View Inception on IMDB">View on IMDB</a></td>
+            </tr>
+            <tr>
+                <td>Dangal</td>
+                <td>Biography / Sports</td>
+                <td>2016</td>
+                <td>8.3</td>
+                <td><a href="https://www.imdb.com/title/tt5074352/" title="View Dangal on IMDB">View on IMDB</a></td>
+            </tr>
+            <tr>
+                <td>Interstellar</td>
+                <td>Sci-Fi / Adventure</td>
+                <td>2014</td>
+                <td>8.7</td>
+                <td><a href="https://www.imdb.com/title/tt0816692/" title="View Interstellar on IMDB">View on IMDB</a></td>
+            </tr>
+            <tr>
+                <td>12th Fail</td>
+                <td>Biography / Drama</td>
+                <td>2023</td>
+                <td>8.8</td>
+                <td><a href="https://www.imdb.com/title/tt23849204/" title="View 12th Fail on IMDB">View on IMDB</a></td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <!-- colspan stretches the note across all five columns -->
+                <td colspan="5">
+                    <small>Note: Ratings are taken from IMDB and may change over time. Last updated: August 2026.</small>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

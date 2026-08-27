@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Selection Page</title>
+</head>
+<body>
+
+    <h1>Plan Your Trip - Selection Page</h1>
+    <p>Select your destination details from the dropdowns below.</p>
+
+    <form>
+        <!-- Country dropdown with pre-selected option -->
+        <p>
+            <label for="country">Country:</label>
+            <select id="country" name="country">
+                <option value="usa">United States</option>
+                <option value="india" selected>India</option>
+                <option value="japan">Japan</option>
+                <option value="france">France</option>
+            </select>
+        </p>
+
+        <!-- State dropdown with pre-selected option -->
+        <p>
+            <label for="state">State:</label>
+            <select id="state" name="state">
+                <option value="rajasthan">Rajasthan</option>
+                <option value="uttarpradesh" selected>Uttar Pradesh</option>
+                <option value="kerala">Kerala</option>
+                <option value="himachal">Himachal Pradesh</option>
+            </select>
+        </p>
+
+        <!-- City dropdown with pre-selected option -->
+        <p>
+            <label for="city">City:</label>
+            <select id="city" name="city">
+                <option value="lucknow">Lucknow</option>
+                <option value="varanasi">Varanasi</option>
+                <option value="agra" selected>Agra</option>
+                <option value="mathura">Mathura</option>
+            </select>
+        </p>
+
+        <!-- Favorite tourist place dropdown with pre-selected option -->
+        <p>
+            <label for="place">Favorite Tourist Place:</label>
+            <select id="place" name="place">
+                <option value="tajmahal" selected>Taj Mahal</option>
+                <option value="agrafort">Agra Fort</option>
+                <option value="fatehpursikri">Fatehpur Sikri</option>
+                <option value="mehtabbagh">Mehtab Bagh</option>
+            </select>
+        </p>
+    </form>
+
+    <hr>
+
+    <!-- Summary paragraph -->
+    <p>
+        <strong>Summary of my choices:</strong> I have selected <em>India</em> as my country,
+        <em>Uttar Pradesh</em> as my state, and <em>Agra</em> as my city. My favorite
+        tourist place is the <em>Taj Mahal</em>, one of the Seven Wonders of the World,
+        which I plan to visit during my next vacation.
+    </p>
+
+</body>
+</html>

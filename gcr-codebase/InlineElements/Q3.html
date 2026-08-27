@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Registration Form</title>
+</head>
+<body>
+
+    <h1>Course Registration Form</h1>
+
+    <!-- Registration form (structure only, no CSS/JS) -->
+    <form>
+
+        <!-- Personal details grouped using fieldset and legend -->
+        <fieldset>
+            <legend>Personal Details</legend>
+
+            <p>
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+            </p>
+
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </p>
+        </fieldset>
+
+        <!-- Course selection grouped using fieldset and legend -->
+        <fieldset>
+            <legend>Course Selection</legend>
+
+            <p>
+                <label for="course">Select a Course:</label>
+                <select id="course" name="course">
+                    <option value="">-- Choose a course --</option>
+                    <option value="html">HTML Basics</option>
+                    <option value="python">Python Programming</option>
+                    <option value="java">Java Fundamentals</option>
+                    <option value="dbms">Database Management</option>
+                </select>
+            </p>
+        </fieldset>
+
+        <p>
+            <input type="submit" value="Register">
+            <input type="reset" value="Clear">
+        </p>
+
+    </form>
+
+    <hr>
+
+    <!-- Course schedule table -->
+    <h2>Available Course Schedules</h2>
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Instructor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Monday</td>
+                <td>10:00 AM - 12:00 PM</td>
+                <td>Prof. Sharma</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>2:00 PM - 4:00 PM</td>
+                <td>Dr. Verma</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>11:00 AM - 1:00 PM</td>
+                <td>Ms. Gupta</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
