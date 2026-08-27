@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q4 - Frameset Layout</title>
+</head>
+<!-- Q4: Frameset layout with a top navigation frame and a bottom content frame -->
+<!-- Note: frameset replaces the body tag. Framesets are obsolete in HTML5,
+     but this demonstrates how they were used. -->
+<frameset rows="20%,80%">
+    <!-- Top frame: navigation links -->
+    <frame src="Q4_nav.html" name="navFrame" title="Navigation Frame">
+    <!-- Bottom frame: welcome message -->
+    <frame src="Q4_welcome.html" name="contentFrame" title="Content Frame">
+    <noframes>
+        <p>Your browser does not support frames.</p>
+    </noframes>
+</frameset>
+</html>

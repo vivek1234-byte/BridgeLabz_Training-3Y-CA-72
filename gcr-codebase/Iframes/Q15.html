@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q15 - Payment Form</title>
+</head>
+<body>
+    <!-- Q15: Payment Form with all fields required -->
+    <h1>Payment Form</h1>
+    <form action="#" method="post">
+        <label for="cardholder">Cardholder Name:</label><br>
+        <input type="text" id="cardholder" name="cardholder" required><br><br>
+
+        <label for="cardnumber">Card Number:</label><br>
+        <input type="text" id="cardnumber" name="cardnumber" maxlength="16" required><br><br>
+
+        <label for="expiry">Expiry Date:</label><br>
+        <input type="month" id="expiry" name="expiry" required><br><br>
+
+        <label for="cvv">CVV:</label><br>
+        <input type="password" id="cvv" name="cvv" maxlength="3" required><br><br>
+
+        <input type="submit" value="Pay Now">
+    </form>
+</body>
+</html>

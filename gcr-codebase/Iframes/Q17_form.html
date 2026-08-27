@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q17 - Form Page</title>
+</head>
+<body>
+    <!-- Q17: form.html - submits into the iframe below, which loads result.html -->
+    <h1>Simple Form</h1>
+    <!--
+        The form's target attribute points to the iframe's name.
+        When Submit is clicked, result.html loads inside the iframe.
+    -->
+    <form action="Q17_result.html" method="get" target="resultFrame">
+        <label for="userinput">Enter some text:</label><br>
+        <input type="text" id="userinput" name="userinput"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+
+    <h2>Result:</h2>
+    <!-- The result page will be displayed inside this iframe after submission -->
+    <iframe name="resultFrame" title="Form Result" width="600" height="200"></iframe>
+</body>
+</html>

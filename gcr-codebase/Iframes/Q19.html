@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q19 - Form Security Attributes</title>
+</head>
+<body>
+    <!-- Q19: Form demonstrating security attributes -->
+    <h1>Secure Login Form</h1>
+    <!-- autocomplete="off" prevents the browser from saving/suggesting entered values -->
+    <form action="#" method="post" autocomplete="off">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <p>
+        Note: Turning off autocomplete improves security because the browser will not
+        store or automatically fill in sensitive information such as usernames and
+        passwords. This protects users on shared or public computers, where another
+        person could otherwise open the form and see or reuse previously saved data.
+    </p>
+</body>
+</html>

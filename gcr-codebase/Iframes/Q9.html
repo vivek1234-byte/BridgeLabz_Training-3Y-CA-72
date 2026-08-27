@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q9 - File Upload Form</title>
+</head>
+<body>
+    <!-- Q9: File Upload Form restricted to .jpg and .png files -->
+    <h1>File Upload Form</h1>
+    <!-- The accept attribute restricts the file picker to the listed types -->
+    <form action="#" method="post" enctype="multipart/form-data">
+        <label for="photo">Upload your photo:</label><br>
+        <input type="file" id="photo" name="photo" accept=".jpg, .png"><br><br>
+        <input type="submit" value="Upload">
+    </form>
+    <p>Note: Only image files with .jpg or .png extensions are allowed for upload.</p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q16 - URI Encoding</title>
+</head>
+<body>
+    <!-- Q16: Demonstrating URI encoding of special characters in a URL -->
+    <h1>URI Encoding Demonstration</h1>
+
+    <p>Original (unencoded) URL:</p>
+    <p>https://example.com/search?query=HTML &amp; CSS</p>
+
+    <!--
+        In the encoded URL below:
+        %20 replaces each space
+        %26 replaces the & symbol (since & separates URL parameters)
+    -->
+    <p>Correctly encoded URL as a hyperlink:</p>
+    <p>
+        <a href="https://example.com/search?query=HTML%20%26%20CSS">
+            https://example.com/search?query=HTML%20%26%20CSS
+        </a>
+    </p>
+</body>
+</html>
