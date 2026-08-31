@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 7 &mdash; Contact</title>
+  <link rel="stylesheet" href="q07-contact.css">
+</head>
+<body>
+
+  <main class="stage">
+
+    <form class="contact-form" action="#" method="post">
+
+      <header class="form-head">
+        <h1>Send us a message</h1>
+        <p>We read everything that arrives and reply within two working days.</p>
+      </header>
+
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      </div>
+
+      <div class="field">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="What is this about?">
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5"
+                  placeholder="Tell us what you need." required></textarea>
+      </div>
+
+      <button type="submit" class="submit">Send message</button>
+
+      <p class="form-note">
+        We use your address only to reply. Nothing is added to a mailing list.
+      </p>
+
+    </form>
+
+  </main>
+
+</body>
+</html>

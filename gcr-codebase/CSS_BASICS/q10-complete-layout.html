@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 10 &mdash; Harbour Lane Studio</title>
+  <link rel="stylesheet" href="q10-complete-layout.css">
+</head>
+<body id="top">
+
+  <!-- STICKY header: scrolls with the page until it reaches the top edge -->
+  <header class="site-header">
+    <a class="brand" href="#top">Harbour Lane</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO: position: relative, so the badge below can be placed absolutely -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>We build small things carefully</h1>
+      <p>A four-person studio in Mathura working on websites, identity and print.</p>
+      <a class="cta" href="#contact">Start a project</a>
+    </div>
+    <p class="hero-badge">Open for work &mdash; September onward</p>
+  </section>
+
+  <main>
+
+    <!-- ABOUT: two columns, text plus image -->
+    <section id="about" class="about">
+      <div class="about-text">
+        <h2>About the studio</h2>
+        <p>
+          Harbour Lane started in 2021 as two people sharing a table above a print shop. The
+          print shop is still downstairs, and we still walk proofs down the stairs rather than
+          emailing them, which has saved us from more mistakes than any process document ever did.
+        </p>
+        <p>
+          We take on six to eight projects a year. That number is deliberate. It means the person
+          you meet in the first conversation is the person doing the work, and it means we can
+          say no to briefs we would do badly.
+        </p>
+        <ul class="facts">
+          <li><strong>4</strong> people</li>
+          <li><strong>2021</strong> founded</li>
+          <li><strong>7</strong> projects this year</li>
+        </ul>
+      </div>
+
+      <figure class="about-figure">
+        <img src="images/about-photo.svg" alt="Abstract artwork representing the studio space">
+        <figcaption>The room above the print shop</figcaption>
+      </figure>
+    </section>
+
+    <!-- SERVICES: three boxes in a row -->
+    <section id="services" class="services">
+      <h2>What we do</h2>
+      <div class="service-grid">
+
+        <article class="service">
+          <h3>Websites</h3>
+          <p>
+            Design and build, usually four to eight weeks. We write the front-end ourselves and
+            hand over something your team can edit without calling us.
+          </p>
+        </article>
+
+        <article class="service">
+          <h3>Identity</h3>
+          <p>
+            Marks, type systems and the rules for using them. Delivered as a short guide people
+            will actually read, not a sixty-page document.
+          </p>
+        </article>
+
+        <article class="service">
+          <h3>Print</h3>
+          <p>
+            Books, packaging and signage. Proofed downstairs on the stock it will be printed on,
+            because screens lie about paper.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONTACT: simple form -->
+    <section id="contact" class="contact">
+      <div class="contact-inner">
+        <h2>Tell us about the project</h2>
+        <p class="contact-note">A paragraph is plenty. We will reply with questions.</p>
+
+        <form class="contact-form" action="#" method="post">
+          <div class="row">
+            <div class="field">
+              <label for="c-name">Name</label>
+              <input type="text" id="c-name" name="name" required>
+            </div>
+            <div class="field">
+              <label for="c-email">Email</label>
+              <input type="email" id="c-email" name="email" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="c-brief">Project</label>
+            <textarea id="c-brief" name="brief" rows="4" required></textarea>
+          </div>
+
+          <button type="submit">Send enquiry</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Harbour Lane Studio. All rights reserved.</p>
+    <p class="credit">Assignment 5, Question 10</p>
+  </footer>
+
+  <!-- FIXED positioning: stays put in the viewport corner while you scroll -->
+  <a class="to-top" href="#top">Top</a>
+
+</body>
+</html>

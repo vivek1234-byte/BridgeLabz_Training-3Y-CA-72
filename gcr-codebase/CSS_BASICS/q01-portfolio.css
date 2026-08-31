@@ -1,0 +1,208 @@
+/* ==========================================================================
+   Question 1 — Personal portfolio homepage
+   Demonstrates: position: fixed header, flexbox sticky footer,
+   and five different CSS units (px, em, %, vh, rem).
+   ========================================================================== */
+
+/* --- Design tokens -------------------------------------------------------
+   Keeping colours in one place means the contrast pairs below are decided
+   once, not re-guessed on every rule.
+   Contrast check: #F3F6F6 text on #0F2A38 background ≈ 14.8:1 (passes AAA). */
+:root {
+  --ink:    #0F2A38;   /* darkest — page background                */
+  --deep:   #163B4A;   /* raised surfaces                          */
+  --sea:    #57A8A0;   /* links and rules                          */
+  --amber:  #E9C46A;   /* single accent — used sparingly           */
+  --paper:  #EEF3F3;   /* body text on dark                        */
+  --muted:  #9DB2B6;   /* secondary text                           */
+
+  --header-height: 72px;              /* px — a fixed chrome height */
+  --measure: 62ch;                    /* readable line length       */
+}
+
+* { box-sizing: border-box; }
+
+/* The body is a vertical flex column. Because <main> is allowed to grow,
+   the footer is pushed to the bottom even when the page is nearly empty. */
+body {
+  margin: 0;
+  min-height: 100vh;                  /* vh — full viewport height  */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--ink);
+  color: var(--paper);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;                    /* rem — root-relative base   */
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Fixed header --------------------------------------------------------
+   position: fixed removes the header from normal flow, so <main> is given
+   top padding equal to the header height to stop content hiding beneath it. */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;                        /* % — spans the viewport     */
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0 clamp(1rem, 4%, 3rem);
+  background-color: rgba(15, 42, 56, 0.94);
+  border-bottom: 1px solid #24505F;
+  z-index: 10;
+}
+
+.brand {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+  color: var(--paper);
+  text-decoration: none;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1.75em;                        /* em — scales with nav font  */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.95rem;
+}
+
+.nav-list a {
+  color: var(--muted);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible { color: var(--paper); border-bottom-color: var(--amber); }
+
+/* --- Main ---------------------------------------------------------------- */
+main {
+  flex: 1;                            /* absorbs leftover height    */
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: calc(var(--header-height) + 4rem) 1.5rem 5rem;
+}
+
+/* Two-column intro that folds to one column on narrow screens. */
+.intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 5rem;
+}
+
+.intro-text { flex: 1 1 340px; }
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  color: var(--sea);
+}
+
+h1 {
+  margin: 0 0 1.25rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3.1rem);  /* vw keeps the display type fluid */
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+.lead {
+  max-width: var(--measure);
+  margin: 0;
+  color: #C9D8DA;
+}
+
+/* --- Portrait ------------------------------------------------------------ */
+.portrait {
+  flex: 0 1 300px;
+  margin: 0;
+}
+
+.portrait img {
+  display: block;
+  width: 100%;                        /* % — fills its flex column  */
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid #2A5867;
+}
+
+.portrait figcaption {
+  margin-top: 0.6em;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* --- Content sections ---------------------------------------------------- */
+.about, .contact {
+  padding-top: 2.5rem;
+  border-top: 1px solid #24505F;
+}
+
+.about { margin-bottom: 3.5rem; }
+
+h2 {
+  margin: 0 0 1rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--amber);
+}
+
+.about p, .contact p { max-width: var(--measure); margin: 0 0 1.5rem; }
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.skills li {
+  padding: 0.35em 0.9em;              /* em padding follows font size */
+  background-color: var(--deep);
+  border: 1px solid #2A5867;
+  border-radius: 999px;
+}
+
+.mail-link {
+  display: inline-block;
+  font-size: 1.1rem;
+  color: var(--sea);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+
+.mail-link:hover { color: var(--amber); }
+
+/* --- Footer -------------------------------------------------------------- */
+.site-footer {
+  padding: 1.5rem;
+  background-color: #0A1F29;
+  border-top: 1px solid #24505F;
+  text-align: center;
+}
+
+.site-footer p { margin: 0; font-size: 0.85rem; color: var(--muted); }
+
+/* Visible keyboard focus everywhere. */
+a:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+
+@media (max-width: 560px) {
+  .site-header { height: auto; padding: 0.75rem 1rem; flex-direction: column; gap: 0.5rem; }
+  main { padding-top: 9rem; }
+}

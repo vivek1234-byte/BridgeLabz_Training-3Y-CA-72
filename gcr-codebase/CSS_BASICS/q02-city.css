@@ -1,0 +1,167 @@
+/* ==========================================================================
+   Question 2 — Multi-section informational webpage
+   Demonstrates: full-width section backgrounds, linear-gradient,
+   radial-gradient, background-attachment: fixed, and a heading scale built
+   from deliberate size + weight pairs.
+   ========================================================================== */
+
+:root {
+  --ink:   #10262F;
+  --slate: #1D4450;
+  --sea:   #2E6F72;
+  --sand:  #E9C46A;
+  --paper: #F1F5F4;
+  --muted: #A7BCC0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--ink);
+  color: var(--paper);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.7;
+}
+
+/* --- Heading scale -------------------------------------------------------
+   Three levels, each distinguished by BOTH size and weight so the hierarchy
+   survives even when the page is printed in one colour. */
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 11vw, 6.5rem);
+  font-weight: 400;                 /* large but light             */
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  margin: 0.2em 0 0.35em;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.1rem;
+  font-weight: 700;                 /* medium size, heavy weight  */
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  font-weight: 600;                 /* small, semi-bold, tinted   */
+  letter-spacing: 0.02em;
+  color: var(--sand);
+  margin: 2.25rem 0 0.5rem;
+}
+
+/* --- Masthead ------------------------------------------------------------ */
+.masthead {
+  padding: 5rem 1.5rem 3.5rem;
+  text-align: center;
+  border-bottom: 1px solid #2C5462;
+}
+
+.kicker { margin: 0; font-size: 0.9rem; color: var(--sea); }
+
+.subtitle {
+  max-width: 46ch;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+/* --- Navigation ---------------------------------------------------------- */
+.section-nav {
+  position: sticky;                 /* rides along as you scroll  */
+  top: 0;
+  background-color: rgba(16, 38, 47, 0.95);
+  border-bottom: 1px solid #2C5462;
+  z-index: 5;
+}
+
+.section-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 1rem 1.5rem;
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.section-nav a { color: var(--muted); text-decoration: none; }
+.section-nav a:hover { color: var(--sand); }
+
+/* --- Section bands -------------------------------------------------------
+   .band is full-bleed; .band-inner holds the readable measure and supplies
+   the vertical padding that separates one section from the next. */
+.band { width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+
+.band-inner {
+  max-width: 720px;
+  margin: 0 auto;                   /* centres the column         */
+  padding: 5.5rem 1.5rem;           /* generous breathing room    */
+}
+
+.band p { max-width: 68ch; margin: 0 0 1.25rem; }
+
+/* Section background 1 — LINEAR GRADIENT, top to bottom. */
+.band--linear {
+  background-image: linear-gradient(180deg, #123A47 0%, #1D4450 55%, #10262F 100%);
+}
+
+/* Section background 2 — flat colour, used as a rest between the gradients. */
+.band--flat {
+  background-color: var(--ink);
+  border-top: 3px solid var(--sea);   /* border defines the section edge */
+}
+
+/* Section background 3 — RADIAL GRADIENT, light pooling off-centre. */
+.band--radial {
+  background-image: radial-gradient(circle at 30% 25%, #2E6F72 0%, #17323D 45%, #0D1F27 100%);
+}
+
+/* --- Parallax bands ------------------------------------------------------
+   background-attachment: fixed pins the image to the viewport instead of the
+   element, so the artwork appears to sit still while the page slides over it. */
+.parallax {
+  position: relative;
+  min-height: 65vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  background-attachment: fixed;     /* the parallax-like effect    */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.parallax--city { background-image: url("images/city-wide.svg"); }
+.parallax--lake { background-image: url("images/lake-wide.svg"); }
+
+.parallax-caption {
+  margin: 0;
+  padding: 0.6rem 1rem;
+  background-color: rgba(10, 26, 33, 0.75);
+  border-left: 3px solid var(--sand);
+  font-size: 0.9rem;
+}
+
+/* iOS ignores background-attachment: fixed, so scrolling is used as a
+   graceful fallback rather than leaving a stretched, broken image. */
+@media (max-width: 700px) {
+  .parallax { background-attachment: scroll; min-height: 45vh; }
+  .band-inner { padding: 3.5rem 1.25rem; }
+}
+
+/* --- Footer -------------------------------------------------------------- */
+.site-footer {
+  padding: 2rem 1.5rem;
+  background-color: #0A1B22;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.site-footer p { margin: 0; }
+
+a:focus-visible { outline: 2px solid var(--sand); outline-offset: 3px; }

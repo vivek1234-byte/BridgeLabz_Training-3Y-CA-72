@@ -1,0 +1,152 @@
+/* ==========================================================================
+   Question 3 — Three-column "Team Members" layout
+   Demonstrates: CSS Grid, the box model (uniform padding + margins),
+   borders, border-radius, box-shadow, a highlighted card, and a media query
+   that collapses the row into a single column below 600px.
+   ========================================================================== */
+
+:root {
+  --ink:    #17323D;
+  --sea:    #2E6F72;
+  --amber:  #C98A1E;
+  --paper:  #F4F7F6;
+  --card:   #FFFFFF;
+  --line:   #D6E0E0;
+  --text:   #2A3F46;
+  --muted:  #64808A;
+}
+
+* { box-sizing: border-box; }   /* padding and border count inside the width */
+
+body {
+  margin: 0;
+  padding: 0 1.5rem 4rem;
+  background-color: var(--paper);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.65;
+}
+
+.page-head {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 4.5rem 0 2.5rem;
+}
+
+.page-head h1 {
+  margin: 0 0 0.4rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 2.9rem);
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.page-head p { margin: 0; color: var(--muted); }
+
+/* --- Grid ----------------------------------------------------------------
+   Three equal tracks. The gap replaces per-card margins, so the spacing
+   between cards is defined in exactly one place. */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  align-items: stretch;         /* every card matches the tallest one */
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+/* --- Card box model ------------------------------------------------------
+   Uniform 2rem padding on all four sides; the border sits outside that
+   padding, and the shadow outside the border. */
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(23, 50, 61, 0.06),
+              0 8px 24px rgba(23, 50, 61, 0.07);
+}
+
+.avatar {
+  width: 84px;
+  height: 84px;
+  margin-bottom: 1.25rem;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  object-fit: cover;
+}
+
+.name {
+  margin: 0 0 0.15rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.role {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--sea);
+}
+
+.bio {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* --- Highlighted card ----------------------------------------------------
+   The team lead gets a tinted background, a heavier accent border and a
+   deeper shadow, so the emphasis is carried by three signals, not colour
+   alone. */
+.card--lead {
+  background-color: #FDF7E9;
+  border: 2px solid var(--amber);
+  border-top-width: 5px;
+  box-shadow: 0 10px 30px rgba(201, 138, 30, 0.18);
+}
+
+.badge {
+  align-self: flex-start;
+  margin: 0 0 1rem;
+  padding: 0.2em 0.7em;
+  background-color: var(--amber);
+  border-radius: 999px;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.card--lead .avatar { border-color: var(--amber); }
+.card--lead .role   { color: #9A6A12; }
+.card--lead .bio    { color: #6B5426; }
+
+.page-foot {
+  max-width: 1080px;
+  margin: 3.5rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.page-foot p { margin: 0; }
+
+/* --- Responsive ----------------------------------------------------------
+   Tablet: two across. Below 600px the row becomes a single column, as
+   required. */
+@media (max-width: 900px) {
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .team-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .card { padding: 1.5rem; }
+}

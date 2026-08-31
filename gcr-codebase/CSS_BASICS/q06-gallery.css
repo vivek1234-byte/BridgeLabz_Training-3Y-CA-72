@@ -1,0 +1,136 @@
+/* ==========================================================================
+   Question 6 — CSS-only photo gallery
+   Demonstrates: responsive Grid with auto-fit, transform: scale on hover,
+   an absolutely positioned caption revealed with opacity, box-shadow and
+   border-radius. No JavaScript anywhere.
+   ========================================================================== */
+
+:root {
+  --ink:   #101F26;
+  --sea:   #5BA3A0;
+  --paper: #E9EEEE;
+  --muted: #8FA6AC;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 1.5rem 5rem;
+  background-color: var(--ink);
+  color: var(--paper);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.page-head {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4.5rem 0 2.5rem;
+}
+
+.page-head h1 {
+  margin: 0 0 0.4rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+}
+
+.page-head p { margin: 0; color: var(--muted); }
+
+/* --- Responsive grid -----------------------------------------------------
+   auto-fit + minmax lets the browser decide how many columns fit: it packs
+   in as many 260px-or-wider tracks as the width allows, so the image count
+   per row changes with the screen without a single media query. */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Tile ----------------------------------------------------------------
+   position: relative makes this the containing block for the caption below.
+   overflow: hidden clips the image as it scales, so the growth happens
+   inside the rounded frame instead of spilling over its neighbours. */
+.tile {
+  position: relative;
+  margin: 0;              /* <figure> carries a default margin — remove it */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: box-shadow 0.3s ease;
+}
+
+.tile img {
+  display: block;          /* removes the inline-image baseline gap */
+  width: 100%;
+  height: 230px;
+  object-fit: cover;       /* fills the frame without distorting    */
+  transform: scale(1);
+  transition: transform 0.45s ease;
+}
+
+/* --- Caption overlay -----------------------------------------------------
+   Absolutely positioned against .tile, stretched across the bottom, and
+   hidden with opacity: 0 until the tile is hovered or focused. */
+.caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  background-image: linear-gradient(to top,
+                    rgba(8, 20, 26, 0.94) 0%,
+                    rgba(8, 20, 26, 0.72) 60%,
+                    rgba(8, 20, 26, 0) 100%);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.caption-title { font-size: 1.05rem; font-weight: 600; }
+.caption-note  { font-size: 0.85rem; color: #C4D3D6; }
+
+/* --- Hover / focus state -------------------------------------------------
+   :focus-within keeps the gallery usable from the keyboard, and the tiles
+   are focusable through the link-free markup by tabbing to the image only
+   when a link is present — kept here for good measure. */
+.tile:hover img,
+.tile:focus-within img {
+  transform: scale(1.1);
+}
+
+.tile:hover .caption,
+.tile:focus-within .caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tile:hover { box-shadow: 0 10px 26px rgba(0, 0, 0, 0.5); }
+
+.page-foot {
+  max-width: 1200px;
+  margin: 3.5rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid #23414B;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.page-foot p { margin: 0; }
+
+/* On touch screens there is no hover, so the captions are shown by default
+   rather than being unreachable. */
+@media (hover: none) {
+  .caption { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile img, .caption { transition: none; }
+  .tile:hover img { transform: none; }
+}

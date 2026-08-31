@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 8 &mdash; Dashboard Layout</title>
+  <link rel="stylesheet" href="q08-dashboard.css">
+</head>
+<body>
+
+  <!-- Fixed top bar -->
+  <header class="topbar">
+    <p class="logo">Meridian</p>
+    <p class="whoami">Signed in as ananya@meridian.in</p>
+  </header>
+
+  <div class="shell">
+
+    <aside class="sidebar">
+      <nav aria-label="Dashboard sections">
+        <p class="side-label">Workspace</p>
+        <ul>
+          <li><a class="is-current" href="#overview">Overview</a></li>
+          <li><a href="#orders">Orders</a></li>
+          <li><a href="#customers">Customers</a></li>
+          <li><a href="#inventory">Inventory</a></li>
+        </ul>
+        <p class="side-label">Account</p>
+        <ul>
+          <li><a href="#billing">Billing</a></li>
+          <li><a href="#settings">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content" id="overview">
+
+      <h1>Overview</h1>
+      <p class="content-intro">Everything below covers the last 30 days.</p>
+
+      <section class="box">
+        <h2>Orders</h2>
+        <p class="figure">1,284</p>
+        <p class="delta">Up 12% on the previous 30 days.</p>
+        <p>
+          Weekday volume is steady. The growth is coming almost entirely from Saturday, which
+          has doubled since the weekend delivery slot opened in July.
+        </p>
+      </section>
+
+      <section class="box">
+        <h2>Open tickets</h2>
+        <p class="figure">37</p>
+        <p class="delta delta--warn">Nine older than four days.</p>
+        <p>
+          The backlog is concentrated in refund requests. Two of the nine are waiting on the
+          courier and cannot close at our end until the parcel is scanned.
+        </p>
+      </section>
+
+      <section class="box">
+        <h2>Stock alerts</h2>
+        <p class="figure">6</p>
+        <p class="delta">Reorder points crossed this week.</p>
+        <p>
+          Five are seasonal lines that will not be restocked. The sixth is the base model, which
+          needs a purchase order raised today to arrive before the weekend.
+        </p>
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>

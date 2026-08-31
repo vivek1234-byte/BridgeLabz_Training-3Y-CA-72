@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Index — contents page for Assignment 5.
+   Not one of the ten questions; it simply links them together.
+   ========================================================================== */
+
+:root {
+  --ink:   #12303A;
+  --sea:   #2E6F72;
+  --amber: #C98A1E;
+  --paper: #F3F6F5;
+  --card:  #FFFFFF;
+  --line:  #D8E2E2;
+  --text:  #33454D;
+  --muted: #6D838C;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 1.5rem 5rem;
+  background-color: var(--paper);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.head {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 5rem 0 2.5rem;
+}
+
+.course { margin: 0; font-size: 0.85rem; letter-spacing: 0.06em; color: var(--sea); }
+
+.head h1 {
+  margin: 0.3rem 0 0.5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.4rem, 7vw, 3.6rem);
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.sub { margin: 0; color: var(--muted); }
+
+.list {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+}
+
+.list li { margin-bottom: 0.75rem; }
+
+.list a {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  grid-template-areas:
+    "n t"
+    "n d";
+  align-items: baseline;
+  gap: 0 1rem;
+  padding: 1.1rem 1.35rem;
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--sea);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-left-color 0.2s ease, transform 0.15s ease;
+}
+
+.list a:hover { border-left-color: var(--amber); transform: translateX(3px); }
+
+.n {
+  grid-area: n;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  color: var(--sea);
+}
+
+.t { grid-area: t; font-weight: 600; color: var(--ink); }
+.d { grid-area: d; font-size: 0.88rem; color: var(--muted); }
+
+.foot {
+  max-width: 760px;
+  margin: 3rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.foot p { margin: 0; }
+
+a:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) { .list a { transition: none; } }

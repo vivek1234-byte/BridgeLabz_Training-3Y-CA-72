@@ -1,0 +1,139 @@
+/* ==========================================================================
+   Question 4 — Long article page
+   Demonstrates: ::first-letter, ::first-line, <mark> styling, an emphasised
+   blockquote, and consistent paragraph rhythm using margins.
+   ========================================================================== */
+
+:root {
+  --ink:    #1F2933;
+  --body:   #33414B;
+  --muted:  #6B7A85;
+  --rule:   #DDE4E6;
+  --accent: #2E6F72;
+  --mark:   #FBE9A7;
+  --paper:  #FBFAF8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 1.5rem 5rem;
+  background-color: var(--paper);
+  color: var(--body);
+  /* A serif body face for long reading, with the extra line-height that
+     serif text needs to stay comfortable. */
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.article {
+  max-width: 40rem;     /* ≈ 68 characters per line */
+  margin: 0 auto;
+}
+
+/* --- Header and subheading ----------------------------------------------- */
+.article-head {
+  padding: 4.5rem 0 2rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.article-head h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.1rem, 6vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.byline {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.author { font-weight: 600; color: var(--accent); }
+
+/* A thin divider between the author and the date, drawn in CSS rather than
+   typed into the HTML. */
+.byline time::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 0.9em;
+  margin: 0 0.75em -0.1em;
+  background-color: var(--rule);
+}
+
+/* --- Paragraph rhythm ----------------------------------------------------
+   Vertical spacing comes from the bottom margin only. Using a single
+   direction avoids margin-collapse surprises between paragraphs. */
+.article p {
+  margin: 0 0 1.75rem;
+}
+
+/* --- ::first-letter ------------------------------------------------------
+   A drop cap on every paragraph, as specified. float lets the following
+   lines wrap around it instead of leaving a tall empty first line. */
+.article > p::first-letter {
+  float: left;
+  margin: 0.08em 0.1em 0 0;
+  padding-right: 0.06em;
+  font-size: 3.4em;
+  line-height: 0.82;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* --- ::first-line --------------------------------------------------------
+   Only inherited, text-level properties are allowed on ::first-line, so
+   font-weight is applied here rather than a border or margin. */
+.article > p::first-line {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* --- Highlighted keywords ------------------------------------------------ */
+mark {
+  background-color: var(--mark);
+  color: var(--ink);
+  padding: 0.1em 0.25em;
+  border-radius: 2px;
+  box-decoration-break: clone;   /* keeps the pill shape across line breaks */
+}
+
+/* --- Blockquote ----------------------------------------------------------
+   Left border plus tinted background lift the quote out of the column
+   without changing the measure. */
+blockquote {
+  margin: 2.5rem 0;
+  padding: 1.5rem 1.75rem;
+  background-color: #EDF3F2;
+  border-left: 5px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #23474A;
+}
+
+blockquote p { margin: 0; }
+
+/* --- Footer -------------------------------------------------------------- */
+.article-foot {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.article-foot p { margin: 0; }
+
+@media (max-width: 560px) {
+  .article > p::first-letter { font-size: 2.8em; }
+}

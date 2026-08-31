@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 1 &mdash; Personal Portfolio Homepage</title>
+  <link rel="stylesheet" href="q01-portfolio.css">
+</head>
+<body>
+
+  <!-- Fixed header: stays pinned to the top while the page scrolls -->
+  <header class="site-header">
+    <a class="brand" href="#home">Kunal Sharma</a>
+    <nav aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+
+    <section class="intro">
+      <div class="intro-text">
+        <p class="eyebrow">Second year, B.Tech Computer Science</p>
+        <h1>I build web interfaces that stay readable at every screen size.</h1>
+        <p class="lead">
+          Most of what I know about layout came from breaking things first. I started with a
+          single stylesheet for a college club page, watched it collapse on a phone, and spent a
+          week learning why. That is still how I work: build, break, measure, rewrite.
+        </p>
+      </div>
+
+      <figure class="portrait">
+        <img src="images/portrait.svg" alt="Illustrated portrait placeholder">
+        <figcaption>Campus, Mathura &mdash; 2026</figcaption>
+      </figure>
+    </section>
+
+    <section id="about" class="about">
+      <h2>What I am working on</h2>
+      <p>
+        A results dashboard for the department that reads attendance from a spreadsheet and
+        renders it as a term-by-term summary. No framework yet &mdash; plain HTML, CSS Grid and a
+        small amount of PHP on the server. The point is to understand the layout properly before
+        letting a library do it for me.
+      </p>
+      <ul class="skills">
+        <li>Semantic HTML</li>
+        <li>CSS Grid &amp; Flexbox</li>
+        <li>Responsive layout</li>
+        <li>Git</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Get in touch</h2>
+      <p>Best reached by email. I reply within a day or two.</p>
+      <a class="mail-link" href="mailto:kunal@example.com">kunal@example.com</a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Kunal Sharma &middot; Assignment 5, Question 1</p>
+  </footer>
+
+</body>
+</html>

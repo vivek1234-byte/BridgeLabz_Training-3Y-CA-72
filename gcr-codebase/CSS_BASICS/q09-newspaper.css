@@ -1,0 +1,148 @@
+/* ==========================================================================
+   Question 9 — Newspaper / magazine column layout
+   Demonstrates: column-count, column-gap, column-rule, column-span: all,
+   justified text, and an image pulled out of the flow with float: left.
+   ========================================================================== */
+
+:root {
+  --ink:    #1B1B18;
+  --body:   #2E2E29;
+  --muted:  #6B6B62;
+  --rule:   #C8C3B4;
+  --page:   #E7E3D8;   /* page background — the paper stock            */
+  --sheet:  #FBF9F3;   /* the printed sheet itself                     */
+  --accent: #7A2E1F;
+}
+
+* { box-sizing: border-box; }
+
+/* Background colour on the page, with the sheet floated above it. */
+body {
+  margin: 0;
+  padding: 2.5rem 1.5rem 4rem;
+  background-color: var(--page);
+  color: var(--body);
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Padding around the main content area, as required. */
+.paper {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 3rem;
+  background-color: var(--sheet);
+  border: 1px solid var(--rule);
+  box-shadow: 0 6px 26px rgba(27, 27, 24, 0.12);
+}
+
+/* --- Nameplate ----------------------------------------------------------- */
+.nameplate {
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 3px double var(--ink);
+  text-align: center;
+}
+
+.edition {
+  margin: 0 0 0.75rem;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.nameplate h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 8vw, 4.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+/* --- Multi-column body ---------------------------------------------------
+   Three columns with a visible rule between them. column-gap sets the
+   gutter; column-rule draws in the middle of that gutter without taking up
+   any width of its own. */
+.broadsheet {
+  column-count: 3;
+  column-gap: 2.5rem;
+  column-rule: 1px solid var(--rule);
+  text-align: justify;              /* justified, as specified */
+  hyphens: auto;                    /* softens the rivers justification creates */
+}
+
+/* --- Headline spanning all columns --------------------------------------- */
+.spanning-headline {
+  column-span: all;                 /* breaks out of the column flow */
+  margin: 0 0 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+  font-size: clamp(1.7rem, 4.5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: left;
+  color: var(--ink);
+}
+
+/* --- Floated image -------------------------------------------------------
+   float: left takes the image out of normal flow so the column text wraps
+   around its right edge. The right and bottom margins keep the text from
+   touching it. */
+.lead-photo {
+  float: left;
+  width: 100%;
+  max-width: 210px;
+  height: auto;
+  margin: 0.35rem 1.1rem 0.8rem 0;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+}
+
+.broadsheet p {
+  margin: 0 0 1rem;
+  text-indent: 1.2em;               /* newspaper indent instead of a blank line */
+}
+
+/* The opening paragraph sets the scene, so it starts flush left and larger. */
+.broadsheet p:first-of-type {
+  text-indent: 0;
+  font-size: 1.05rem;
+}
+
+.broadsheet p:first-of-type::first-letter {
+  float: left;
+  margin: 0.05em 0.08em 0 0;
+  font-size: 3.2em;
+  line-height: 0.8;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* --- Colophon ------------------------------------------------------------ */
+.colophon {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.colophon p { margin: 0; }
+
+/* --- Keeping it readable when resized ------------------------------------
+   Three narrow columns stop being readable well before the phone breakpoint,
+   so the count steps down twice. */
+@media (max-width: 900px) {
+  .broadsheet { column-count: 2; column-gap: 2rem; }
+  .paper { padding: 2rem; }
+}
+
+@media (max-width: 620px) {
+  .broadsheet { column-count: 1; text-align: left; }
+  .lead-photo { float: none; max-width: 100%; margin: 0 0 1.25rem; }
+  .paper { padding: 1.5rem; }
+}

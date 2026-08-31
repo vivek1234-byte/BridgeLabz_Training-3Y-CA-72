@@ -1,0 +1,363 @@
+/* ==========================================================================
+   Question 10 — Complete page layout
+   Demonstrates every required item:
+     • margin, padding, border and outline
+     • relative (hero, about figure), absolute (badge, caption) and
+       fixed (back-to-top link) positioning
+     • flexbox and grid for responsive alignment
+     • rgba() colours and both linear and radial gradients
+   ========================================================================== */
+
+:root {
+  --ink:     #12303A;
+  --deep:    #0C222A;
+  --sea:     #2E6F72;
+  --sea-lt:  #61A9A4;
+  --amber:   #D9A441;
+  --paper:   #F4F7F6;
+  --card:    #FFFFFF;
+  --line:    #D6E0E1;
+  --text:    #31454D;
+  --muted:   #6C838C;
+
+  --gutter:  clamp(1.25rem, 5vw, 4rem);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+
+/* --- Sticky header -------------------------------------------------------
+   position: sticky keeps the header in normal flow until it hits top: 0,
+   then pins it there — no compensating padding needed elsewhere. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem var(--gutter);
+  background-color: rgba(18, 48, 58, 0.95);   /* rgba() — translucent bar */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.brand {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  color: var(--paper);
+  text-decoration: none;
+}
+
+.site-header nav ul {
+  display: flex;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.95rem;
+}
+
+.site-header nav a {
+  color: #B9CDD1;
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;   /* border reserved so hover doesn't shift */
+}
+
+.site-header nav a:hover { color: #FFFFFF; border-bottom-color: var(--amber); }
+
+/* --- Hero ----------------------------------------------------------------
+   position: relative makes this the containing block for .hero-badge.
+   Two layers are stacked in background-image: an rgba gradient wash over
+   the photograph, so the text keeps its contrast whatever the image shows. */
+.hero {
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem var(--gutter);
+  text-align: center;
+  background-image:
+    linear-gradient(rgba(12, 34, 42, 0.72), rgba(12, 34, 42, 0.86)),
+    url("images/hero-wide.svg");
+  background-size: cover;
+  background-position: center;
+  color: var(--paper);
+}
+
+.hero-text { max-width: 46rem; }
+
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.3rem, 7vw, 4.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  margin: 0 auto 2rem;
+  max-width: 34rem;
+  font-size: 1.15rem;
+  color: #CBDCDE;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  background-color: var(--amber);
+  border: 2px solid var(--amber);
+  border-radius: 6px;
+  color: #26200F;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cta:hover { background-color: transparent; color: var(--amber); }
+
+/* ABSOLUTE positioning inside the relative hero. */
+.hero-badge {
+  position: absolute;
+  right: var(--gutter);
+  bottom: 1.5rem;
+  margin: 0;
+  padding: 0.4rem 0.9rem;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+/* --- Shared section rhythm ---------------------------------------------- */
+main section { padding: 5.5rem var(--gutter); }
+
+main h2 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  color: var(--ink);
+}
+
+/* --- About: two columns -------------------------------------------------- */
+.about {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.about p { margin: 0 0 1.25rem; max-width: 60ch; }
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  margin: 2rem 0 0;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.facts strong {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.9rem;
+  font-weight: 400;
+  color: var(--sea);
+}
+
+.facts li { font-size: 0.85rem; color: var(--muted); }
+
+/* Relative parent + absolute caption. */
+.about-figure {
+  position: relative;
+  margin: 0;
+}
+
+.about-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+
+.about-figure figcaption {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  padding: 0.4rem 0.85rem;
+  background-color: rgba(12, 34, 42, 0.78);
+  border-radius: 6px;
+  color: var(--paper);
+  font-size: 0.8rem;
+}
+
+/* --- Services: three boxes ----------------------------------------------
+   A RADIAL gradient marks this band as a different surface from the rest. */
+.services {
+  background-image: radial-gradient(circle at 50% 0%,
+                    rgba(46, 111, 114, 0.14) 0%,
+                    rgba(46, 111, 114, 0) 60%),
+                    linear-gradient(180deg, #ECF2F1 0%, #E3EBEA 100%);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.services h2 { max-width: 1120px; margin-left: auto; margin-right: auto; }
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  max-width: 1120px;
+  margin: 2rem auto 0;
+}
+
+.service {
+  padding: 2rem;                     /* padding — inside the border      */
+  margin: 0;                         /* margin — spacing is from the gap */
+  background-color: var(--card);
+  border: 1px solid var(--line);     /* border                            */
+  border-top: 4px solid var(--sea);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(18, 48, 58, 0.07);
+}
+
+.service h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.3rem;
+  color: var(--ink);
+}
+
+.service p { margin: 0; font-size: 0.95rem; color: var(--muted); }
+
+/* --- Contact ------------------------------------------------------------- */
+.contact { background-color: var(--ink); color: var(--paper); }
+
+.contact-inner { max-width: 680px; margin: 0 auto; }
+
+.contact h2 { color: var(--paper); }
+
+.contact-note { margin: 0 0 2rem; color: #A9C0C4; }
+
+/* Flexbox row that wraps to a single column when there is no room. */
+.row { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.row .field { flex: 1 1 220px; }
+
+.field { margin-bottom: 1.25rem; }
+
+.field label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  font: inherit;
+  color: var(--paper);
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  border-radius: 6px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.field textarea { resize: vertical; }
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--sea-lt);
+  background-color: rgba(255, 255, 255, 0.1);
+  /* outline — drawn outside the border box, so it never changes layout */
+  outline: 2px solid rgba(217, 164, 65, 0.55);
+  outline-offset: 2px;
+}
+
+.contact button {
+  margin-top: 0.5rem;
+  padding: 0.85rem 2rem;
+  font: inherit;
+  font-weight: 600;
+  color: #26200F;
+  background-color: var(--amber);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact button:hover { background-color: #C48F2E; }
+
+/* --- Footer -------------------------------------------------------------- */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 2rem var(--gutter);
+  background-color: var(--deep);
+  color: #93AAB0;
+  font-size: 0.85rem;
+}
+
+.site-footer p { margin: 0; }
+.credit { color: #6B838A; }
+
+/* --- FIXED back-to-top link ---------------------------------------------
+   Fixed to the viewport, so it stays in the corner regardless of scroll. */
+.to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 40;
+  padding: 0.6rem 1rem;
+  background-color: rgba(18, 48, 58, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  color: var(--paper);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.to-top:hover { background-color: var(--sea); }
+
+/* Consistent keyboard focus across every interactive element. */
+a:focus-visible,
+button:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+
+html { scroll-behavior: smooth; }
+
+/* --- Responsive ---------------------------------------------------------- */
+@media (max-width: 900px) {
+  .service-grid { grid-template-columns: 1fr; }
+  .about { grid-template-columns: 1fr; }
+  .about-figure { order: -1; }        /* image leads on narrow screens */
+}
+
+@media (max-width: 560px) {
+  .site-header { flex-direction: column; gap: 0.75rem; }
+  main section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  .hero { min-height: 62vh; }
+  .facts { gap: 1.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 4 &mdash; The Quiet Cost of a Fast Page</title>
+  <link rel="stylesheet" href="q04-article.css">
+</head>
+<body>
+
+  <article class="article">
+
+    <header class="article-head">
+      <h1>The quiet cost of a fast page</h1>
+      <p class="byline">
+        By <span class="author">Ritika Nandan</span>
+        <time datetime="2026-08-14">14 August 2026</time>
+      </p>
+    </header>
+
+    <p>
+      Every performance budget starts as a number and ends as an argument. The number is easy:
+      someone reads a study, picks a threshold, and writes it on a whiteboard. The argument
+      arrives three sprints later when a <mark>feature nobody wants to cut</mark> pushes the page
+      past it, and the team has to decide whether the budget was a rule or a wish.
+    </p>
+
+    <p>
+      Most teams discover at that point that they never agreed on what the number measured. Total
+      transfer size is not the same as time to first paint, and neither describes the moment a
+      person can actually use the thing. A page can load in under a second and still feel broken
+      if the layout shifts twice while someone is reading it.
+    </p>
+
+    <blockquote>
+      A budget that has never blocked a release is not a budget. It is a decoration that everyone
+      has agreed to admire.
+    </blockquote>
+
+    <p>
+      The teams that hold the line tend to share one habit: they measure on the hardware their
+      users actually own. A mid-range Android phone on a congested tower is not an edge case in
+      most of the world, it is the median. Testing on a laptop plugged into office fibre produces
+      numbers that are true and useless at the same time.
+    </p>
+
+    <p>
+      There is a second habit, less discussed. They give the budget an owner. Not a committee, not
+      a dashboard &mdash; a person whose job includes saying no, and whose refusal survives
+      escalation. Without that, <mark>the budget becomes a suggestion</mark> the moment it becomes
+      inconvenient, which is precisely the moment it was written for.
+    </p>
+
+    <p>
+      None of this requires new tooling. It requires deciding, before the pressure arrives, what
+      the page is allowed to cost and who gets to spend it. The technical work of shaving
+      kilobytes is the easy half. The hard half is organisational, and no bundler will do it for
+      you.
+    </p>
+
+    <footer class="article-foot">
+      <p>Assignment 5, Question 4 &middot; Long-form article styling</p>
+    </footer>
+
+  </article>
+
+</body>
+</html>
