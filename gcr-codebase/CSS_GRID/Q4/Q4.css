@@ -1,0 +1,142 @@
+/* Q4 - Dashboard layout using CSS Grid */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  background-color: #eef1f2;
+  color: #16323f;
+}
+
+/* ---------- Outer grid: header on top, sidebar left, content right ---------- */
+.dashboard {
+  display: grid;
+  grid-template-columns: 220px 1fr;      /* fractional unit for the main column */
+  grid-template-rows: auto 1fr;
+  grid-gap: 18px;
+  min-height: 100vh;
+  padding: 18px;
+}
+
+/* Header spans across all columns */
+.header {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: #0f2d3d;
+  color: #f2ede4;
+  padding: 20px 26px;
+  border-radius: 8px;
+}
+
+.header h1 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.date {
+  font-size: 0.78rem;
+  color: #9db6c1;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 18px 14px;
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column;              /* vertical navigation */
+  gap: 4px;
+}
+
+.side-nav a {
+  text-decoration: none;
+  color: #4d585f;
+  font-size: 0.84rem;
+  padding: 10px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.side-nav a:hover,
+.side-nav a:focus {
+  background-color: #eef1f2;
+  color: #0f2d3d;
+}
+
+.side-nav a.active {
+  background-color: #0f2d3d;
+  color: #f2ede4;
+}
+
+/* ---------- Inner grid: 2 rows x 2 columns ---------- */
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 18px;
+}
+
+.box {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* One box spans two columns */
+.wide {
+  grid-column: span 2;
+}
+
+.box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 14px 28px rgba(15, 45, 61, 0.18);
+}
+
+.box h2 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6d7378;
+  margin-bottom: 12px;
+}
+
+.figure {
+  font-family: Georgia, serif;
+  font-size: 2.3rem;
+  color: #0f2d3d;
+  margin-bottom: 8px;
+}
+
+.note {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #4d585f;
+}
+
+/* ---------- Small screens: sidebar moves above the content ---------- */
+@media (max-width: 820px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .wide {
+    grid-column: span 1;
+  }
+}

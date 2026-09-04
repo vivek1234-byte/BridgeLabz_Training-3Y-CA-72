@@ -1,0 +1,111 @@
+/* Q3 - Header, Main and Footer homepage using Flexbox */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body is a vertical flex column so the footer always sits at the bottom */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Verdana, Geneva, sans-serif;
+  background-color: #f2ede4;
+  color: #16323f;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background-color: #0f2d3d;
+  padding: 18px 24px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;   /* evenly spaced links */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav a {
+  color: #f2ede4;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.4px;
+  padding: 6px 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.nav a:hover,
+.nav a:focus {
+  border-bottom-color: #d98b3a;
+}
+
+/* ---------- Main: three boxes in a row ---------- */
+.main {
+  flex: 1;                          /* fills the space between header and footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  padding: 56px 24px;
+}
+
+.box {
+  flex: 1 1 260px;
+  max-width: 320px;
+  background-color: #ffffff;
+  border: 1px solid #e2ddd2;
+  border-radius: 6px;
+  padding: 28px 24px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.box:hover {
+  transform: rotate(2deg);
+  box-shadow: 0 12px 24px rgba(15, 45, 61, 0.16);
+}
+
+.box h2 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+}
+
+.box p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #4d585f;
+}
+
+/* ---------- Footer: full width, bottom of page ---------- */
+.site-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  background-color: #0f2d3d;
+  color: #f2ede4;
+  font-size: 0.8rem;
+}
+
+/* ---------- Keeps the layout balanced on small screens ---------- */
+@media (max-width: 720px) {
+  .main {
+    flex-direction: column;
+    padding: 36px 20px;
+  }
+
+  .box {
+    width: 100%;
+    max-width: 420px;
+  }
+}

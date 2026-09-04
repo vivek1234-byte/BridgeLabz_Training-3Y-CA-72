@@ -1,0 +1,170 @@
+/* Q5 - Pricing section using Flexbox, with fade-in on page load */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  background-color: #f2ede4;
+  color: #16323f;
+}
+
+.pricing {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+.heading {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* ---------- Flex row of three cards ---------- */
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.card {
+  flex: 1 1 280px;
+  max-width: 320px;
+  background-color: #ffffff;
+  border: 1px solid #e2ddd2;
+  border-radius: 8px;
+  padding: 32px 26px;
+  text-align: center;
+
+  /* fade-in animation on page load */
+  opacity: 0;
+  animation: fadeIn 0.7s ease forwards;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* staggered start so the three cards appear one after another */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.25s; }
+.card:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 30px rgba(15, 45, 61, 0.18);
+}
+
+/* Middle card is bigger and highlighted */
+.featured {
+  background-color: #0f2d3d;
+  color: #f2ede4;
+  border-color: #0f2d3d;
+  padding: 44px 30px;
+  transform: scale(1.06);
+  animation-name: fadeInFeatured;   /* same fade, but keeps the larger size */
+}
+
+@keyframes fadeInFeatured {
+  from {
+    opacity: 0;
+    transform: scale(1.06) translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.06) translateY(0);
+  }
+}
+
+.featured:hover {
+  transform: scale(1.06) translateY(-10px);
+}
+
+.plan {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.price {
+  font-family: Georgia, serif;
+  font-size: 2.1rem;
+  margin-bottom: 22px;
+}
+
+.price span {
+  font-family: Verdana, sans-serif;
+  font-size: 0.75rem;
+  color: #8b959a;
+}
+
+.features {
+  list-style: none;
+  margin-bottom: 26px;
+}
+
+.features li {
+  font-size: 0.84rem;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(125, 140, 148, 0.25);
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.82rem;
+  padding: 11px 24px;
+  border-radius: 5px;
+  background-color: #d98b3a;
+  color: #16323f;
+  transition: background-color 0.3s;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #c2762a;
+}
+
+/* ---------- Stack vertically below 750px ---------- */
+@media (max-width: 750px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card,
+  .featured {
+    width: 100%;
+    max-width: 380px;
+    animation-name: fadeIn;   /* no scaling when the cards are stacked */
+  }
+
+  .featured:hover,
+  .card:hover {
+    transform: translateY(-10px);
+  }
+}
+
+/* Respect a reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    opacity: 1;
+    animation: none;
+  }
+}

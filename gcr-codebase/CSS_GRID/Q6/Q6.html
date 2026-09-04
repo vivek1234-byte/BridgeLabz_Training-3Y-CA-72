@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q6 - Responsive Blog Layout with CSS Grid</title>
+  <link rel="stylesheet" href="Q6.css">
+</head>
+<body>
+
+  <div class="layout">
+
+    <header class="header">
+      <h1 class="title">The Margin Note</h1>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">Archive</a>
+        <a href="#">About</a>
+      </nav>
+    </header>
+
+    <aside class="sidebar">
+      <h2>Categories</h2>
+      <ul>
+        <li><a href="#">CSS layout</a></li>
+        <li><a href="#">Typography</a></li>
+        <li><a href="#">Accessibility</a></li>
+        <li><a href="#">Study notes</a></li>
+        <li><a href="#">Book reviews</a></li>
+      </ul>
+    </aside>
+
+    <main class="main">
+      <article class="post">
+        <h2>Why grid-template-areas is easier to read</h2>
+        <p class="meta">4 March 2026 &middot; 6 min read</p>
+        <p>
+          Naming the regions of a page turns the CSS into something close to a
+          picture of the layout. Instead of counting line numbers you write the
+          shape you want, and moving the sidebar becomes a one line change inside
+          a media query.
+        </p>
+      </article>
+
+      <article class="post">
+        <h2>Notes on spacing with gap</h2>
+        <p class="meta">27 February 2026 &middot; 4 min read</p>
+        <p>
+          Margins collapse and fight each other. The gap property spaces grid and
+          flex children evenly without any of that, which keeps the rhythm of a
+          page consistent even when items are added or removed later.
+        </p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <p>Write to us: hello@marginnote.example &middot; Mathura, Uttar Pradesh</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>

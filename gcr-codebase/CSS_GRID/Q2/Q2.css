@@ -1,0 +1,96 @@
+/* Q2 - 4 column product gallery using CSS Grid */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  background-color: #f6f4ef;
+  color: #23272b;
+  padding: 40px 24px 64px;
+}
+
+.page-head {
+  max-width: 1080px;
+  margin: 0 auto 32px;
+}
+
+.page-head h1 {
+  font-family: Georgia, serif;
+  font-size: 1.9rem;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+
+.page-head p {
+  font-size: 0.85rem;
+  color: #6d7378;
+}
+
+/* ---------- Grid: 4 equal columns ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ---------- Card ---------- */
+.card {
+  display: flex;               /* keeps price at the bottom */
+  flex-direction: column;
+  height: 100%;                /* equal height rows regardless of text length */
+  background-color: #ffffff;
+  border: 1px solid #e2ddd2;
+  border-radius: 6px;
+  padding: 16px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 22px rgba(35, 39, 43, 0.14);
+}
+
+.thumb {
+  height: 130px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+
+.thumb-a { background-color: #0f2d3d; }
+.thumb-b { background-color: #d98b3a; }
+.thumb-c { background-color: #6b8f9c; }
+.thumb-d { background-color: #8a4b46; }
+
+.name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.price {
+  margin-top: auto;            /* pushes price to the bottom of every card */
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  color: #8a4b46;
+}
+
+/* ---------- Tablet: 2 columns ---------- */
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Mobile: 1 column ---------- */
+@media (max-width: 560px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}

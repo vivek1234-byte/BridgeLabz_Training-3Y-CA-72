@@ -1,0 +1,72 @@
+/* Q8 - Photo gallery using auto-fit grid columns and hover zoom */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  background-color: #f6f4ef;
+  color: #23272b;
+  padding: 40px 24px 64px;
+}
+
+.page-head {
+  max-width: 1100px;
+  margin: 0 auto 30px;
+}
+
+.page-head h1 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 1.9rem;
+  margin-bottom: 6px;
+}
+
+.page-head p {
+  font-size: 0.82rem;
+  color: #6d7378;
+}
+
+/* ---------- Grid adjusts itself to the screen size ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.item {
+  overflow: hidden;              /* keeps the zoomed image inside its cell */
+  border-radius: 6px;
+  background-color: #ffffff;
+  border: 1px solid #e4dfd5;
+}
+
+.item img {
+  display: block;
+  width: 100%;                   /* image fills the whole grid cell */
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.item:hover img,
+.item:focus-within img {
+  transform: scale(1.08);
+}
+
+figcaption {
+  padding: 12px 14px;
+  font-size: 0.8rem;
+  color: #4d585f;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item img {
+    transition: none;
+  }
+}
