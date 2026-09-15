@@ -1,0 +1,77 @@
+/* Apply box-sizing globally for demonstration context */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f3f4;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header { text-align: center; padding: 20px; }
+
+/* Center the demonstration using Flexbox */
+.demo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+/* Visual representation of Box Model Layers */
+.margin-area {
+    background-color: #f9ca24; /* Margin color */
+    padding: 40px; /* Represents the margin size visually */
+    outline: 2px dashed #f39c12;
+    position: relative;
+}
+
+.border-area {
+    background-color: #eb4d4b; /* Border color */
+    padding: 10px; /* Represents border thickness visually */
+    outline: 2px solid #c0392b;
+    position: relative;
+}
+
+.padding-area {
+    background-color: #badc58; /* Padding color */
+    padding: 30px; /* Represents padding size visually */
+    outline: 2px dotted #6ab04c;
+    position: relative;
+}
+
+.content-area {
+    background-color: #7ed6df; /* Content color */
+    width: 150px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 1px solid #22a6b3;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Labels styling */
+.label {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(0,0,0,0.7);
+}
+.info {
+    margin-top: 40px;
+    max-width: 500px;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}

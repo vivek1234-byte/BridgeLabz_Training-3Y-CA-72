@@ -1,0 +1,39 @@
+body { font-family: sans-serif; margin: 0; min-height: 100vh; display: flex; flex-direction: column; }
+header { text-align: center; padding: 15px; background: #2c3e50; color: white; }
+.container {
+    /* Center all boxes vertically and horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex: 1;
+    background: #ecf0f1;
+    padding: 20px;
+}
+.box {
+    /* Common styling for visualization */
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+}
+/* Box 1: px units, overflow */
+.box-px {
+    width: 150px;
+    height: 100px;
+    background-color: #e74c3c;
+    overflow: auto; /* Handle overflow */
+}
+/* Box 2: % units, min-height */
+.box-percent {
+    width: 25%;
+    min-height: 150px; /* Min height rule */
+    background-color: #3498db;
+}
+/* Box 3: vh and em units, max-width */
+.box-vh-em {
+    height: 20vh;
+    width: 30em;
+    max-width: 300px; /* Max width rule */
+    background-color: #2ecc71;
+}

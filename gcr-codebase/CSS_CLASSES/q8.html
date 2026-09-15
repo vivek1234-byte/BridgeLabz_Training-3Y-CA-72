@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q8: Box-Sizing Comparison</title>
+    <link rel="stylesheet" href="q8.css">
+</head>
+<body>
+    <header>
+        <h1>Q8: Box-Sizing Comparison Page</h1>
+    </header>
+    <main class="comparison-container">
+        
+        <div class="box-wrapper">
+            <div class="box default-box">
+                250px Content-Box
+            </div>
+            <p class="description"><strong>box-sizing: content-box;</strong> (Default)<br>Total width = Width (250px) + Padding (40px*2) + Border (5px*2) = 340px</p>
+        </div>
+
+        <div class="box-wrapper">
+            <div class="box border-box">
+                250px Border-Box
+            </div>
+            <p class="description"><strong>box-sizing: border-box;</strong><br>Total width = 250px strictly. Padding and borders are absorbed inside.</p>
+        </div>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q8: Box Model Exploration</title>
+    <link rel="stylesheet" href="q8.css">
+</head>
+<body>
+    <header>
+        <h1>Q8: Box Model Exploration Page</h1>
+    </header>
+    <main class="demo-container">
+        <div class="box-model">
+            <span class="label margin-label">Margin (Outer Space)</span>
+            <div class="margin-area">
+                <span class="label border-label">Border (Edge)</span>
+                <div class="border-area">
+                    <span class="label padding-label">Padding (Inner Space)</span>
+                    <div class="padding-area">
+                        <span class="label content-label">Content (Dimensions)</span>
+                        <div class="content-area">
+                            100px x 100px
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info">
+            <p>This demonstration uses <code>box-sizing: border-box;</code>. This means the width and height include the padding and border, ensuring the element's total size remains predictable.</p>
+        </div>
+    </main>
+</body>
+</html>

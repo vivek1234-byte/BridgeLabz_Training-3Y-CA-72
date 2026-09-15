@@ -1,0 +1,79 @@
+/* Q5 Styles */
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f1f2f6; margin: 0; }
+header { text-align: center; padding: 30px; }
+
+/* Align buttons using Flexbox and ensure consistent spacing */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+
+/* Base button styles */
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid transparent; /* default transparent border */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Attractive shadow */
+    transition: all 0.3s ease; /* Hover and active transitions */
+}
+
+/* Primary Style */
+.btn-primary {
+    background-color: #3742fa;
+    color: white;
+}
+.btn-primary:hover:not(:disabled) {
+    background-color: #5352ed;
+    box-shadow: 0 6px 12px rgba(55, 66, 250, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Secondary Style */
+.btn-secondary {
+    background-color: #2ed573;
+    color: white;
+}
+.btn-secondary:hover:not(:disabled) {
+    background-color: #7bed9f;
+    box-shadow: 0 6px 12px rgba(46, 213, 115, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Outline Style */
+.btn-outline {
+    background-color: transparent;
+    color: #ff4757;
+    border-color: #ff4757;
+}
+.btn-outline:hover:not(:disabled) {
+    background-color: #ff4757;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Active pseudo-class effect (clicking) */
+.btn:active:not(:disabled) {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Focus pseudo-class */
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.15); /* Focus ring */
+}
+
+/* Disabled pseudo-class */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}

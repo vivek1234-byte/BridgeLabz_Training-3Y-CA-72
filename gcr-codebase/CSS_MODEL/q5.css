@@ -1,0 +1,57 @@
+body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background: #fafafa; }
+section { margin-bottom: 30px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+
+/* 1. Attribute Selectors */
+/* Selects input specifically with type="text" */
+input[type="text"] {
+    border: 2px solid #3498db;
+    padding: 10px;
+}
+/* Selects links starting with "https" */
+a[href^="https"] {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+/* 2. Pseudo-classes */
+/* Applies on hover */
+a:hover { text-decoration: none; }
+/* Applies when input is focused */
+input:focus { outline: none; border-color: #e74c3c; }
+/* Selects even children in the list */
+.item-list li:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* 3. Pseudo-elements */
+/* Adds content before the title */
+.title::before {
+    content: "⭐ ";
+    color: gold;
+}
+/* Adds content after the secure link */
+.secure-link::after {
+    content: " (Secure)";
+    font-size: 0.8em;
+    color: gray;
+}
+
+/* 4. Combinators */
+/* Child combinator (>): selects direct 'p' children of .parent */
+.parent > p {
+    color: #8e44ad;
+}
+/* Adjacent sibling combinator (+): selects 'p' immediately following a 'span' */
+span + p {
+    border-left: 3px solid #e67e22;
+    padding-left: 10px;
+}
+/* General sibling combinator (~): selects all 'div' siblings after a 'span' */
+span ~ div {
+    background: #ecf0f1;
+    padding: 10px;
+}
+/* Descendant combinator (space): selects any 'p' inside .nested, regardless of depth */
+.nested p {
+    font-style: italic;
+}

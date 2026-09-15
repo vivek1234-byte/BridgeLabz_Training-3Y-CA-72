@@ -1,0 +1,107 @@
+/* Q10 Styles */
+/* Apply consistent box-sizing */
+*, *::before, *::after { box-sizing: border-box; }
+
+body { font-family: Arial, sans-serif; margin: 0; background-color: #f5f6fa; }
+
+/* Use Flexbox for layout alignment and ensure full responsiveness */
+.layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.app-header {
+    background-color: #2f3640;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Consistent shadow */
+}
+.app-header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+.app-header nav a:hover { border-bottom-color: #e1b12c; } /* Hover effect */
+
+/* Main Content Area */
+.app-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Main Content Card */
+.main-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    /* Consistent shadows and border styles */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border: 1px solid #dcdde1;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.avatar {
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 4px solid #f5f6fa;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h3 { margin-top: 0; color: #2f3640; }
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-form input {
+    padding: 12px;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Focus effects using pseudo-classes */
+.login-form input:focus {
+    border-color: #00a8ff;
+    box-shadow: 0 0 0 3px rgba(0, 168, 255, 0.2);
+}
+
+.login-form button {
+    padding: 12px;
+    background-color: #00a8ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+/* Hover & Active effects */
+.login-form button:hover { background-color: #0097e6; }
+.login-form button:active { transform: scale(0.98); }
+
+/* Footer */
+.app-footer {
+    background-color: #2f3640;
+    color: #7f8fa6;
+    text-align: center;
+    padding: 15px;
+}

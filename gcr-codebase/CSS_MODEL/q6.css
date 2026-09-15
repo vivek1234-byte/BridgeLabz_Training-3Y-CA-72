@@ -1,0 +1,32 @@
+body { font-family: sans-serif; text-align: center; background: #fdfdfd; margin: 0; padding: 40px; }
+/* Arrange boxes horizontally using Flexbox */
+.transform-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+.box-wrapper { text-align: center; }
+.transform-box {
+    width: 100px;
+    height: 100px;
+    background: #3498db;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    /* Common transition for all transforms */
+    transition: all 0.4s ease;
+    margin: 0 auto 15px auto;
+    cursor: pointer;
+}
+
+/* Hover Transformations */
+.box-rotate:hover { transform: rotate(45deg); background: #e74c3c; }
+.box-scale:hover { transform: scale(1.5); background: #2ecc71; }
+.box-translate:hover { transform: translate(0, -20px); background: #f1c40f; color: black; }
+.box-skew:hover { transform: skewX(20deg); background: #9b59b6; }
+
+.label { font-family: monospace; color: #555; }

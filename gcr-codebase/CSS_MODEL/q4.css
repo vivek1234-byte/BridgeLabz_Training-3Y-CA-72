@@ -1,0 +1,32 @@
+body { font-family: sans-serif; background: #e0e5ec; margin: 0; display: flex; flex-direction: column; min-height: 100vh; }
+header { text-align: center; padding: 20px; }
+.card-container {
+    /* Arrange cards in a single row using Flexbox */
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 250px;
+    text-align: center;
+    /* CSS transitions for smooth animation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Text shadow for depth */
+.shadow-heading { text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+
+/* Different box-shadow styles */
+.shadow-light { box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.shadow-medium { box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+.shadow-heavy { box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+
+/* Hover effect to lift up and enlarge shadow */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}

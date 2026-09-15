@@ -1,0 +1,64 @@
+/* Q9 Styles */
+body { font-family: sans-serif; margin: 0; background: #dfe6e9; min-height: 100vh; display: flex; flex-direction: column; }
+header { text-align: center; padding: 20px; }
+
+/* Use Flexbox to distribute multiple examples evenly across the page */
+.effects-container {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 50px;
+}
+
+/* Ensure transitions are smooth and visually balanced */
+.effect-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #2d3436;
+    /* Combine transitions for multiple properties */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    /* Subtle initial shadow */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Example 1: Grow slightly and change color on hover */
+.grow-color:hover {
+    transform: scale(1.1);
+    background-color: #e17055;
+    color: white;
+    box-shadow: 0 10px 20px rgba(225, 112, 85, 0.4);
+}
+
+/* Example 2: Spin slightly and add a glowing shadow */
+.rotate-shadow:hover {
+    transform: translateY(-5px) rotate(5deg);
+    background-color: #00cec9;
+    color: white;
+    box-shadow: 0 15px 25px rgba(0, 206, 201, 0.5);
+}
+
+/* Example 3: Card effect combining pseudo-classes, transitions, transformations */
+.effect-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    max-width: 250px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.4s ease-in-out;
+}
+
+.effect-card:hover {
+    transform: scale(1.05) translateY(-10px);
+    border-color: #fdcb6e;
+    box-shadow: 0 20px 30px rgba(253, 203, 110, 0.3);
+}

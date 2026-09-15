@@ -1,0 +1,61 @@
+/* Q2 Styles */
+body { font-family: sans-serif; margin: 0; background: #f0f4f8; min-height: 100vh; display: flex; flex-direction: column; }
+header { text-align: center; padding: 20px; background: #2c3e50; color: white; }
+
+/* Center all examples on the page using Flexbox */
+.tooltip-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+}
+
+/* Wrapper for relative positioning */
+.tooltip-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.icon { font-size: 2rem; }
+.hover-btn { padding: 10px 20px; font-size: 1rem; cursor: pointer; }
+.inline-word { font-weight: bold; color: #2980b9; border-bottom: 1px dashed #2980b9; }
+
+/* Tooltip styles using only CSS */
+.tooltip {
+    position: absolute;
+    bottom: 120%; /* Positioned above the element */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    
+    /* Fade in smoothly using transition */
+    opacity: 0;
+    pointer-events: none; /* Prevents tooltip from blocking hover */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Add a small arrow to the tooltip */
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Show tooltip on hover */
+.tooltip-wrapper:hover .tooltip {
+    opacity: 1;
+}

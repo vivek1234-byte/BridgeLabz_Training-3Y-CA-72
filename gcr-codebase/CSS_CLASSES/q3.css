@@ -1,0 +1,67 @@
+/* Q3 Styles */
+body { font-family: Arial, sans-serif; margin: 0; background: #eaeaea; }
+header { text-align: center; padding: 20px; background: #222; color: #fff; }
+
+/* CSS Grid for arrangement */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Image Card Styling */
+.image-card {
+    margin: 0;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden; /* Ensures child elements respect border-radius */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Modern box-shadow */
+}
+
+/* Wrapper to handle scaling and overlay */
+.img-wrapper {
+    position: relative;
+    overflow: hidden; /* Hide scaled image bounds */
+}
+
+.img-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+}
+
+/* Semi-transparent overlay */
+.overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Hover effects */
+.image-card:hover .img-wrapper img {
+    transform: scale(1.1); /* Scale up image */
+}
+.image-card:hover .overlay {
+    opacity: 1; /* Darken via overlay */
+}
+
+/* Caption styling */
+figcaption {
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Responsive behavior: Stack below 700px */
+@media (max-width: 700px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}

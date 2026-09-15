@@ -1,0 +1,69 @@
+/* Q6 Styles */
+body { font-family: sans-serif; margin: 0; background: #2f3542; color: white; min-height: 100vh; display: flex; flex-direction: column; }
+header { text-align: center; padding: 20px; }
+
+/* Center animations vertically and horizontally on the page */
+.animation-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Common animation timing */
+.anim-element { font-weight: bold; text-align: center; }
+
+/* 1. Moving Box */
+.moving-box {
+    width: 150px;
+    padding: 20px;
+    background-color: #ff4757;
+    border-radius: 8px;
+    /* Apply properties */
+    animation-name: moveSideToSide;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out; /* smooth timing */
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes moveSideToSide {
+    0% { transform: translateX(-100px); }
+    100% { transform: translateX(100px); }
+}
+
+/* 2. Bouncing Ball */
+.bouncing-ball {
+    width: 60px;
+    height: 60px;
+    background-color: #1e90ff;
+    border-radius: 50%;
+    /* Apply properties */
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 0.5s; /* Example of delay */
+}
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-80px) scale(1.1); }
+}
+
+/* 3. Color Changing Text */
+.color-text {
+    font-size: 2rem;
+    animation-name: changeColor;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes changeColor {
+    0% { color: #ffa502; text-shadow: 0 0 10px #ffa502; }
+    33% { color: #2ed573; text-shadow: 0 0 10px #2ed573; }
+    66% { color: #1e90ff; text-shadow: 0 0 10px #1e90ff; }
+    100% { color: #ff4757; text-shadow: 0 0 10px #ff4757; }
+}

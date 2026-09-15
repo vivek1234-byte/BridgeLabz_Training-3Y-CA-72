@@ -1,0 +1,73 @@
+/* Q4 Styles */
+/* 
+ * 1. Element Selector 
+ * Targets all <p> elements 
+ */
+p {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 
+ * 2. Class Selector 
+ * Targets elements with class="highlight-text" 
+ */
+.highlight-text {
+    background-color: #ffeaa7;
+    font-weight: bold;
+    padding: 5px;
+}
+
+/* 
+ * 3. ID Selector 
+ * Targets specific element with id="unique-paragraph" 
+ */
+#unique-paragraph {
+    color: #d63031;
+    border-left: 4px solid #d63031;
+    padding-left: 10px;
+}
+
+/* 
+ * 4. Attribute Selector 
+ * Targets exactly input type="text" 
+ */
+input[type="text"] {
+    border: 2px solid #0984e3;
+    padding: 8px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* 
+ * 5. Combinators 
+ */
+
+/* Child Combinator (>): Targets only direct <p> children of .parent-box */
+.parent-box > p {
+    color: #6c5ce7;
+    font-weight: bold;
+}
+
+/* Descendant Combinator (space): Targets ANY <p> inside .parent-box */
+.parent-box p {
+    margin-left: 15px;
+}
+
+/* Adjacent Sibling Combinator (+): Targets the <p> immediately after .sibling-start */
+.sibling-start + p {
+    background-color: #00b894;
+    color: white;
+    padding: 5px;
+}
+
+/* General Sibling Combinator (~): Targets all <p> siblings that follow .sibling-start */
+.sibling-start ~ p {
+    text-decoration: underline;
+}
+
+/* Structural and alignment styles */
+body { font-family: Arial, sans-serif; margin: 0; background: #fdfdfd; }
+.main-header, .main-footer { background: #2d3436; color: white; text-align: center; padding: 20px; }
+.content-area { padding: 40px; max-width: 800px; margin: 0 auto; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+section { margin-bottom: 30px; }

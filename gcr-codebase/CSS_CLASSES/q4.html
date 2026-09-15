@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q4: CSS Selectors</title>
+    <link rel="stylesheet" href="q4.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Q4: CSS Selectors Practice Page</h1>
+    </header>
+
+    <main class="content-area">
+        <section>
+            <h2>Element and Class Selectors</h2>
+            <p>This is a standard paragraph element.</p>
+            <p class="highlight-text">This paragraph uses a class selector.</p>
+        </section>
+
+        <section>
+            <h2>ID and Attribute Selectors</h2>
+            <p id="unique-paragraph">This paragraph has a unique ID.</p>
+            <input type="text" placeholder="Text input (Attribute selector)">
+            <input type="email" placeholder="Email input">
+        </section>
+
+        <section>
+            <h2>Combinators</h2>
+            <div class="parent-box">
+                <p>Direct child paragraph</p>
+                <div>
+                    <p>Descendant paragraph</p>
+                </div>
+            </div>
+            
+            <h3>Sibling Combinators</h3>
+            <h4 class="sibling-start">Start heading</h4>
+            <p>Adjacent sibling paragraph</p>
+            <p>General sibling paragraph 1</p>
+            <p>General sibling paragraph 2</p>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2023 CSS Selectors Practice</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,72 @@
+/* Q7 Styles */
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Soft background gradient for appealing interface */
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+/* Card-like container using Flexbox */
+.ui-container {
+    background: #ffffff;
+    padding: 40px;
+    /* Consistent border-radius and box-shadow */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    min-width: 350px;
+}
+
+h2 { margin: 0; color: #333; text-align: center; }
+
+/* Consistent styling */
+.ui-input, .ui-btn {
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-bar-wrapper { display: flex; gap: 10px; }
+.search-input { flex: 1; }
+
+.dropdown-wrapper { display: flex; flex-direction: column; gap: 8px; }
+.dropdown-wrapper label { font-size: 14px; color: #555; font-weight: bold; }
+.dropdown { width: 100%; cursor: pointer; }
+
+.action-buttons { display: flex; justify-content: space-between; gap: 10px; margin-top: 10px; }
+
+/* Buttons */
+.ui-btn {
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(108, 92, 231, 0.2);
+}
+.ui-btn.secondary { background-color: #b2bec3; color: #2d3436; box-shadow: none; }
+
+/* Highlight focused or active elements using :focus and :hover */
+.ui-input:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+}
+
+.ui-btn:hover {
+    background-color: #5b4bc4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(108, 92, 231, 0.3);
+}
+.ui-btn.secondary:hover { background-color: #99a5ab; }
+
+.ui-btn:focus { box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.4); }
