@@ -1,0 +1,1 @@
+.product{transition:transform .2s,box-shadow .2s}.product:hover{transform:translateY(-4px);box-shadow:0 .5rem 1rem rgba(0,0,0,.12)!important}.product img{height:220px;object-fit:cover}

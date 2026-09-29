@@ -1,0 +1,1 @@
+.hero{background:linear-gradient(135deg,#eef5ff,#fff);min-height:70vh;display:flex;align-items:center}.hero img{max-height:380px;width:100%;object-fit:cover}.hero .btn{transition:transform .2s}.hero .btn:hover{transform:translateY(-2px)}
