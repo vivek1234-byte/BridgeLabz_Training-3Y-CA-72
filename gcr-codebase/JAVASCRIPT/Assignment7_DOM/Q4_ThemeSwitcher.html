@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 40px; min-height: 100vh; box-sizing: border-box; transition: background .3s, color .3s; }
+        button { padding: 8px 16px; margin-right: 8px; cursor: pointer; border-radius: 4px; border: 1px solid #888; }
+        .card { margin-top: 20px; padding: 20px; border-radius: 8px; max-width: 400px; }
+
+        body.light { background: #ffffff; color: #222; }
+        body.light .card { background: #f1f1f1; }
+
+        body.dark { background: #1e1e1e; color: #eee; }
+        body.dark .card { background: #333; }
+        body.dark button { background: #444; color: #eee; }
+
+        body.blue { background: #0d3b66; color: #f4f9ff; }
+        body.blue .card { background: #1a5b99; }
+        body.blue button { background: #faf0ca; color: #0d3b66; }
+    </style>
+</head>
+<body class="light" data-theme="light">
+    <h1>Theme Switcher</h1>
+    <div id="themeButtons">
+        <button data-theme-choice="light">Light</button>
+        <button data-theme-choice="dark">Dark</button>
+        <button data-theme-choice="blue">Blue</button>
+    </div>
+    <div class="card">
+        <p>Current theme: <strong id="currentTheme">light</strong></p>
+        <p>The theme is stored on &lt;body&gt; in the <code>data-theme</code> attribute.</p>
+    </div>
+    <script src="Q4_ThemeSwitcher.js"></script>
+</body>
+</html>

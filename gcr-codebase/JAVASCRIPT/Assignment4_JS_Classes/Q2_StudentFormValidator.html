@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2 - Student Registration Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f6f8; padding: 30px; }
+        form, .card { background: #fff; max-width: 420px; padding: 20px 24px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+        label { display: block; margin-top: 12px; font-weight: bold; }
+        input { width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box; border: 2px solid #ccc; border-radius: 4px; }
+        input.valid { border-color: green; }
+        input.invalid { border-color: red; }
+        .error { color: red; font-size: 13px; min-height: 16px; display: block; }
+        button { margin-top: 16px; padding: 8px 18px; border: none; border-radius: 4px; background: #2563eb; color: #fff; cursor: pointer; }
+        .success { color: green; font-weight: bold; margin-top: 12px; }
+        pre { background: #eef; padding: 10px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h2>Student Registration</h2>
+    <form id="studentForm" novalidate>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Only alphabets">
+        <span class="error" id="nameError"></span>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="example@domain.com">
+        <span class="error" id="emailError"></span>
+
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" placeholder="10 digits">
+        <span class="error" id="phoneError"></span>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="1 uppercase, 1 number, 1 special">
+        <span class="error" id="passwordError"></span>
+
+        <button type="submit">Register</button>
+        <p class="success" id="successMessage"></p>
+    </form>
+    <script src="Q2_StudentFormValidator.js"></script>
+</body>
+</html>

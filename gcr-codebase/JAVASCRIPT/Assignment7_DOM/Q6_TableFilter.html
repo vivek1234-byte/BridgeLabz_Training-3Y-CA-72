@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Table Filter</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; }
+        #searchBox { width: 100%; padding: 8px; box-sizing: border-box; margin-bottom: 12px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background: #4a90e2; color: white; }
+        #noResults { display: none; color: #c00; margin-top: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Students</h1>
+    <input type="text" id="searchBox" placeholder="Search by name, branch or CGPA...">
+    <table>
+        <thead>
+            <tr><th>Name</th><th>Branch</th><th>CGPA</th></tr>
+        </thead>
+        <tbody id="studentTableBody">
+            <tr><td>Aarav Sharma</td><td>CSE</td><td>8.7</td></tr>
+            <tr><td>Priya Verma</td><td>ECE</td><td>9.1</td></tr>
+            <tr><td>Rohan Gupta</td><td>Mechanical</td><td>7.4</td></tr>
+            <tr><td>Sneha Iyer</td><td>CSE</td><td>8.2</td></tr>
+            <tr><td>Kabir Singh</td><td>Civil</td><td>6.9</td></tr>
+            <tr><td>Ananya Rao</td><td>IT</td><td>9.4</td></tr>
+            <tr><td>Vikram Patel</td><td>EEE</td><td>7.8</td></tr>
+        </tbody>
+    </table>
+    <p id="noResults">No results found</p>
+    <script src="Q6_TableFilter.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card Fetcher</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 20px; }
+        #products { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+        .card { background: #fff; border-radius: 8px; padding: 12px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,.1); }
+        .card img { height: 150px; max-width: 100%; object-fit: contain; }
+        .card h3 { font-size: 14px; }
+        .price { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Products</h1>
+    <div id="products"></div>
+    <script src="Q6_ProductCardFetcher.js"></script>
+</body>
+</html>

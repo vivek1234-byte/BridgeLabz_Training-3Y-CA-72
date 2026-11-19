@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Dropdown</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .dropdown { position: relative; display: inline-block; width: 220px; }
+        #dropdownButton { width: 100%; padding: 10px; text-align: left; cursor: pointer; border: 1px solid #888; border-radius: 4px; background: #fff; }
+        #dropdownButton::after { content: "▾"; float: right; }
+        #optionList { display: none; position: absolute; top: 100%; left: 0; right: 0; margin: 2px 0 0; padding: 0; list-style: none; border: 1px solid #888; border-radius: 4px; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,.15); z-index: 10; }
+        #optionList.open { display: block; }
+        #optionList li { padding: 8px 10px; cursor: pointer; }
+        #optionList li:hover { background: #e6f0ff; }
+        #optionList li.selected { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Custom Dropdown</h1>
+    <div class="dropdown" id="dropdown">
+        <button type="button" id="dropdownButton">Select a language</button>
+        <ul id="optionList">
+            <li data-value="js">JavaScript</li>
+            <li data-value="py">Python</li>
+            <li data-value="java">Java</li>
+            <li data-value="cpp">C++</li>
+            <li data-value="go">Go</li>
+        </ul>
+    </div>
+    <p id="selectionInfo">Nothing selected yet.</p>
+    <script src="Q8_CustomDropdown.js"></script>
+</body>
+</html>

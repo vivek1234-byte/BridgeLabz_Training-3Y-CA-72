@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q5 - Movie Ticket Booking</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f6f8; padding: 30px; }
+        form, .card { background: #fff; max-width: 420px; padding: 20px 24px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+        label { display: block; margin-top: 12px; font-weight: bold; }
+        input { width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box; border: 2px solid #ccc; border-radius: 4px; }
+        input.valid { border-color: green; }
+        input.invalid { border-color: red; }
+        .error { color: red; font-size: 13px; min-height: 16px; display: block; }
+        button { margin-top: 16px; padding: 8px 18px; border: none; border-radius: 4px; background: #2563eb; color: #fff; cursor: pointer; }
+        .success { color: green; font-weight: bold; margin-top: 12px; }
+        pre { background: #eef; padding: 10px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h2>Book Movie Tickets</h2>
+    <form id="bookingForm" novalidate>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Alphabets only">
+        <span class="error" id="nameError"></span>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com">
+        <span class="error" id="emailError"></span>
+
+        <label for="seats">Seats</label>
+        <input type="number" id="seats" placeholder="1 to 10">
+        <span class="error" id="seatsError"></span>
+
+        <button type="submit">Book Now</button>
+    </form>
+    <div class="card" id="ticket" style="display:none; margin-top:20px;"></div>
+    <script src="Q5_MovieTicketBooking.js"></script>
+</body>
+</html>

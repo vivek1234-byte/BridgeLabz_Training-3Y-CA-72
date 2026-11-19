@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List Manager</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 40px auto; }
+        #productInput { padding: 8px; width: 70%; }
+        button { padding: 6px 12px; cursor: pointer; margin-left: 4px; }
+        ul { list-style: none; padding: 0; }
+        li { display: flex; align-items: center; justify-content: space-between; padding: 8px; border-bottom: 1px solid #ddd; }
+        .product-name { flex: 1; }
+        .product-name.editing { outline: 2px solid #4a90e2; padding: 2px 4px; background: #eef5ff; }
+    </style>
+</head>
+<body>
+    <h1>Product List</h1>
+    <input type="text" id="productInput" placeholder="Enter product name">
+    <button id="addButton">Add</button>
+
+    <!-- A single listener on this <ul> handles all Edit/Delete clicks (event delegation) -->
+    <ul id="productList"></ul>
+
+    <script src="Q1_ProductListManager.js"></script>
+</body>
+</html>

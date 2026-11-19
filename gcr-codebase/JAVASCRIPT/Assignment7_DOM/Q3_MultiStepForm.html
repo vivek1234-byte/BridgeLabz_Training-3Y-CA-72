@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 420px; margin: 40px auto; }
+        .step { display: none; }
+        .step.active { display: block; }
+        label { display: block; margin-bottom: 6px; font-weight: bold; }
+        input { width: 100%; padding: 8px; box-sizing: border-box; }
+        .error { color: red; font-size: 13px; min-height: 18px; margin-top: 4px; }
+        .buttons { margin-top: 12px; display: flex; justify-content: space-between; }
+        button { padding: 6px 16px; cursor: pointer; }
+        #progress { color: #555; margin-bottom: 10px; }
+        #summary { display: none; background: #eef8ee; padding: 12px; border-radius: 6px; }
+    </style>
+</head>
+<body>
+    <h1>Registration</h1>
+    <div id="progress">Step 1 of 3</div>
+
+    <form id="multiStepForm" novalidate>
+        <div class="step active" data-step="1">
+            <label for="nameInput">Name</label>
+            <input type="text" id="nameInput" placeholder="Your name">
+            <div class="error"></div>
+        </div>
+        <div class="step" data-step="2">
+            <label for="emailInput">Email</label>
+            <input type="email" id="emailInput" placeholder="you@example.com">
+            <div class="error"></div>
+        </div>
+        <div class="step" data-step="3">
+            <label for="passwordInput">Password</label>
+            <input type="password" id="passwordInput" placeholder="At least 6 characters">
+            <div class="error"></div>
+        </div>
+
+        <div class="buttons">
+            <button type="button" id="backButton">Back</button>
+            <button type="button" id="nextButton">Next</button>
+        </div>
+    </form>
+
+    <div id="summary"></div>
+    <script src="Q3_MultiStepForm.js"></script>
+</body>
+</html>

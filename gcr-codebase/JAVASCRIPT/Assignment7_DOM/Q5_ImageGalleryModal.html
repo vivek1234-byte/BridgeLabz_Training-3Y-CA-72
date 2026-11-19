@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; }
+        .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 700px; }
+        .gallery img { width: 100%; height: 150px; object-fit: cover; cursor: pointer; border-radius: 6px; transition: transform .2s; }
+        .gallery img:hover { transform: scale(1.03); }
+
+        /* The overlay covers the page; the modal box sits in the centre */
+        .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.75); justify-content: center; align-items: center; }
+        .overlay.open { display: flex; }
+        .modal { background: #fff; padding: 12px; border-radius: 8px; max-width: 90vw; text-align: center; }
+        .modal img { max-width: 80vw; max-height: 75vh; display: block; }
+        .modal p { margin: 8px 0 0; }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div class="gallery" id="gallery">
+        <img src="https://picsum.photos/id/10/300/200" data-large="https://picsum.photos/id/10/1000/700" alt="Forest">
+        <img src="https://picsum.photos/id/20/300/200" data-large="https://picsum.photos/id/20/1000/700" alt="Desk">
+        <img src="https://picsum.photos/id/29/300/200" data-large="https://picsum.photos/id/29/1000/700" alt="Mountains">
+        <img src="https://picsum.photos/id/37/300/200" data-large="https://picsum.photos/id/37/1000/700" alt="Waves">
+        <img src="https://picsum.photos/id/48/300/200" data-large="https://picsum.photos/id/48/1000/700" alt="Laptop">
+        <img src="https://picsum.photos/id/58/300/200" data-large="https://picsum.photos/id/58/1000/700" alt="Coast">
+    </div>
+
+    <div class="overlay" id="overlay">
+        <div class="modal" id="modal">
+            <img id="modalImage" src="" alt="">
+            <p id="modalCaption"></p>
+        </div>
+    </div>
+    <script src="Q5_ImageGalleryModal.js"></script>
+</body>
+</html>
